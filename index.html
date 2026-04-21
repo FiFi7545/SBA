@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surrey Basketball Association</title>
+<meta name="description" content="Surrey Basketball Association — governing junior and senior basketball across the county of Surrey. Central Venue Leagues for U10 through U18, senior men's and women's leagues, and county squads.">
+
+<style>
+  :root {
+    --sba-red: #B8241C;
+    --sba-red-dark: #8A1712;
+    --sba-gold: #D4A93A;
+    --sba-gold-soft: #E8C667;
+    --cream: #FAF6EC;
+    --ink: #1A1613;
+    --ink-soft: #3E3731;
+    --muted: #6B5F55;
+    --line: #E4DCC8;
+    --hover: #F3EAD3;
+    --serif: Georgia, "Iowan Old Style", Charter, Cambria, Times, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a { color: var(--sba-red); }
+
+  /* ================= HEADER ================= */
+  header.site-header {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .brand-logo {
+    width: auto;
+    height: 44px;
+    flex-shrink: 0;
+    display: block;
+  }
+  .brand-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .brand-sub {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .header-links {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 14px;
+  }
+  .header-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+  }
+  .header-links a:hover { background: var(--hover); color: var(--ink); }
+  .header-links a.current {
+    background: var(--sba-red);
+    color: #fff;
+  }
+
+  /* ================= ANNOUNCEMENT BAR ================= */
+  .announce-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, var(--sba-gold) 0%, #E8C667 100%);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    transition: filter 0.2s;
+  }
+  .announce-bar:hover { filter: brightness(1.05); }
+  .announce-tag {
+    background: var(--ink);
+    color: var(--sba-gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+    flex-shrink: 0;
+  }
+  .announce-text {
+    flex: 1;
+    max-width: 760px;
+    text-align: left;
+  }
+  .announce-arrow {
+    font-weight: 700;
+    color: var(--sba-red);
+    flex-shrink: 0;
+  }
+
+  /* ================= CONTAINER ================= */
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .narrow {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section.band { padding: 80px 0; }
+  section.band.tight { padding: 56px 0; }
+
+  /* ================= HEADINGS ================= */
+  .kicker {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sba-red);
+    margin-bottom: 14px;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(30px, 4.5vw, 46px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  h2 em { font-style: italic; color: var(--sba-red); font-weight: 600; }
+  h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .lead {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin-bottom: 40px;
+  }
+
+  /* ================= BUTTONS ================= */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 26px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
+  }
+  .btn-primary {
+    background: var(--sba-red);
+    color: #fff;
+    box-shadow: 0 4px 0 var(--sba-red-dark);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--sba-red-dark); }
+  .btn-primary:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--sba-red-dark); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 2px solid var(--ink);
+  }
+  .btn-secondary:hover { background: var(--ink); color: var(--cream); }
+  .btn-gold {
+    background: var(--sba-gold);
+    color: var(--ink);
+    box-shadow: 0 4px 0 #A68420;
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #A68420; }
+
+  /* ================= HERO ================= */
+  .hero {
+    padding: 64px 0 88px;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at top right, rgba(212, 169, 58, 0.2), transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(184, 36, 28, 0.1), transparent 55%),
+      var(--cream);
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(40px, 6.5vw, 82px);
+    letter-spacing: -0.025em;
+    line-height: 0.98;
+    color: var(--ink);
+    margin-bottom: 26px;
+  }
+  .hero h1 em { font-style: italic; color: var(--sba-red); font-weight: 600; }
+  .hero-lead {
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin-bottom: 32px;
+  }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* Hero visual: basketball + floating badge */
+  .hero-viz {
+    position: relative;
+    aspect-ratio: 1;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .hero-ball {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 32%, #E87A3E, #B84A1C 55%, #7A2A0C);
+    box-shadow: 0 20px 60px rgba(122, 42, 12, 0.4), inset -20px -30px 60px rgba(0,0,0,0.25);
+  }
+  .hero-ball::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(90deg, transparent 49%, rgba(0,0,0,0.45) 49%, rgba(0,0,0,0.45) 51%, transparent 51%);
+  }
+  .hero-ball::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 50% 0%, transparent 58%, rgba(0,0,0,0.45) 58.5%, rgba(0,0,0,0.45) 61%, transparent 61.5%),
+      radial-gradient(circle at 50% 100%, transparent 58%, rgba(0,0,0,0.45) 58.5%, rgba(0,0,0,0.45) 61%, transparent 61.5%);
+  }
+  .hero-badge {
+    position: absolute;
+    bottom: 30px;
+    right: -20px;
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 14px;
+    padding: 16px 20px;
+    box-shadow: 8px 8px 0 var(--sba-gold);
+    z-index: 2;
+    transform: rotate(-4deg);
+    max-width: 230px;
+  }
+  .hero-badge-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .hero-badge-text {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .hero-badge-text em { color: var(--sba-red); font-style: italic; }
+
+  /* ================= STATS STRIP ================= */
+  .stats-strip {
+    background: var(--ink);
+    color: #fff;
+    padding: 44px 0;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .stat { text-align: center; }
+  .stat-value {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 38px;
+    color: var(--sba-gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.04em;
+  }
+
+  /* ================= TILE GRID (who are you) ================= */
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .tile {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 32px 28px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display: block;
+    position: relative;
+  }
+  .tile:hover {
+    transform: translateY(-4px);
+    border-color: var(--sba-gold);
+    box-shadow: 0 8px 24px rgba(184, 36, 28, 0.08);
+  }
+  .tile-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sba-red);
+    margin-bottom: 10px;
+  }
+  .tile h3 { margin-bottom: 10px; }
+  .tile p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .tile-cta {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--sba-red);
+  }
+
+  /* ================= FEATURE BANDS ================= */
+  .feature-band {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .feature-band.reverse {
+    grid-template-columns: 1fr 1fr;
+  }
+  .feature-band.reverse .feature-text { order: 2; }
+  .feature-band.reverse .feature-visual { order: 1; }
+
+  .feature-text h2 { margin-bottom: 18px; }
+  .feature-text p { margin-bottom: 16px; font-size: 16px; color: var(--ink-soft); }
+  .feature-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 24px;
+  }
+  .feature-text ul li {
+    padding: 10px 0 10px 28px;
+    position: relative;
+    font-size: 15px;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--line);
+  }
+  .feature-text ul li:last-child { border-bottom: none; }
+  .feature-text ul li::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 17px;
+    width: 8px;
+    height: 8px;
+    background: var(--sba-gold);
+    border-radius: 50%;
+  }
+
+  /* Visual panel for age group feature */
+  .age-stack {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .age-chip {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 12px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+    cursor: default;
+  }
+  .age-chip:hover {
+    transform: translateY(-2px);
+    border-color: var(--sba-gold);
+  }
+  .age-chip-num {
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: 28px;
+    color: var(--sba-red);
+    line-height: 1;
+  }
+  .age-chip-sub {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .age-chip.adult {
+    background: var(--ink);
+    border-color: var(--ink);
+    grid-column: span 3;
+    padding: 18px;
+  }
+  .age-chip.adult .age-chip-num {
+    font-size: 22px;
+    color: var(--sba-gold);
+  }
+  .age-chip.adult .age-chip-sub {
+    color: rgba(255,255,255,0.7);
+    margin-top: 2px;
+  }
+
+  /* Officiate promo block */
+  .officiate-promo {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 22px;
+    padding: 56px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .officiate-promo::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 169, 58, 0.25), transparent 60%);
+    pointer-events: none;
+  }
+  .officiate-promo-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .officiate-promo .kicker { color: var(--sba-gold); }
+  .officiate-promo h2 { color: #fff; }
+  .officiate-promo h2 em { color: var(--sba-gold); }
+  .officiate-promo p {
+    color: rgba(255,255,255,0.75);
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  .officiate-roles {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .officiate-role {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .officiate-role-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .officiate-role-icon.whistle { background: var(--sba-red); }
+  .officiate-role-icon.whistle::before, .officiate-role-icon.whistle::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+  }
+  .officiate-role-icon.whistle::before {
+    background: linear-gradient(90deg, transparent 48%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.5) 52%, transparent 52%);
+  }
+  .officiate-role-icon.whistle::after {
+    background:
+      radial-gradient(circle at 50% 0%, transparent 55%, rgba(0,0,0,0.5) 56%, rgba(0,0,0,0.5) 59%, transparent 60%),
+      radial-gradient(circle at 50% 100%, transparent 55%, rgba(0,0,0,0.5) 56%, rgba(0,0,0,0.5) 59%, transparent 60%);
+  }
+  .officiate-role-icon.sheet { background: var(--sba-gold); }
+  .officiate-role-icon.sheet::before {
+    content: '';
+    position: absolute;
+    inset: 9px;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 5px, var(--ink) 5px 6px),
+      repeating-linear-gradient(90deg, transparent 0 6px, var(--ink) 6px 7px);
+    border: 1.5px solid var(--ink);
+    border-radius: 2px;
+  }
+  .officiate-role-text {
+    flex: 1;
+  }
+  .officiate-role-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+  .officiate-role-detail {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* ================= NEWS TEASER ================= */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .news-item {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .news-item:hover {
+    border-color: var(--sba-red);
+    transform: translateY(-2px);
+  }
+  .news-date {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .news-item h3 {
+    font-size: 19px;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .news-item p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  /* Clickable news-link variant (for news items that link to external announcements) */
+  a.news-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: linear-gradient(135deg, #fff 0%, #FFF8E6 100%);
+    border-color: var(--sba-gold);
+  }
+  a.news-link:hover {
+    border-color: var(--sba-red);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(184, 36, 28, 0.12);
+  }
+  a.news-link .news-date {
+    color: var(--sba-red);
+  }
+  .news-cta {
+    display: inline-block;
+    margin-top: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--sba-red);
+  }
+
+  /* ================= VENUES / CONTACT ================= */
+  .venues-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .venue-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .venue-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.25;
+  }
+  .venue-town {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .venue-ages {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--sba-red);
+    background: rgba(184, 36, 28, 0.08);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  /* ================= FINAL CTA ================= */
+  .final-cta {
+    background: linear-gradient(135deg, var(--sba-red) 0%, var(--sba-red-dark) 100%);
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+  }
+  .final-cta h2 { color: #fff; margin-bottom: 16px; }
+  .final-cta h2 em { color: var(--sba-gold-soft); font-style: italic; }
+  .final-cta p {
+    color: rgba(255,255,255,0.85);
+    font-size: 17px;
+    max-width: 560px;
+    margin: 0 auto 28px;
+  }
+  .final-cta .btn-gold { font-size: 16px; padding: 16px 32px; }
+
+  /* ================= FOOTER ================= */
+  footer {
+    background: var(--ink);
+    color: rgba(250, 246, 236, 0.75);
+    padding: 56px 0 28px;
+  }
+  footer .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+  }
+  footer h5 {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sba-gold);
+    margin-bottom: 14px;
+  }
+  footer p, footer li {
+    color: rgba(250, 246, 236, 0.65);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  footer ul { list-style: none; padding: 0; }
+  footer ul li { margin-bottom: 8px; }
+  footer a {
+    color: rgba(250, 246, 236, 0.75);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  footer a:hover { color: var(--sba-gold); }
+  .footer-about p { margin-top: 10px; }
+  .footer-social { display: flex; gap: 10px; margin-top: 14px; }
+  .footer-social a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s, color 0.2s;
+  }
+  .footer-social a:hover { background: var(--sba-gold); color: var(--ink); }
+
+  /* Affiliations strip */
+  .affiliations {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(250, 246, 236, 0.1);
+    margin-top: 32px;
+    padding-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .affiliations-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250, 246, 236, 0.5);
+    flex-shrink: 0;
+  }
+  .affiliations-logos {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .affiliations-logos a {
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 100px;
+    padding: 6px 10px;
+    transition: transform 0.2s;
+  }
+  .affiliations-logos a:hover { transform: translateY(-2px); }
+  .affiliations-logos img {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(250, 246, 236, 0.1);
+    margin-top: 36px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(250, 246, 236, 0.5);
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 1000px) {
+    .header-links a { padding: 6px 10px; font-size: 13px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-viz { max-width: 320px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .tiles { grid-template-columns: 1fr 1fr; }
+    .feature-band, .feature-band.reverse { grid-template-columns: 1fr; gap: 32px; }
+    .feature-band.reverse .feature-text { order: 1; }
+    .feature-band.reverse .feature-visual { order: 2; }
+    .officiate-promo { padding: 40px 32px; }
+    .officiate-promo-inner { grid-template-columns: 1fr; gap: 32px; }
+    .news-grid { grid-template-columns: 1fr; }
+    .venues-grid { grid-template-columns: 1fr 1fr; }
+    footer .container { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .header-inner { padding: 12px 16px; gap: 12px; }
+    .brand-sub { display: none; }
+    .header-links { gap: 2px; overflow-x: auto; scrollbar-width: none; }
+    .header-links::-webkit-scrollbar { display: none; }
+    .header-links a { padding: 6px 10px; font-size: 13px; white-space: nowrap; }
+    .tiles { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    section.band { padding: 56px 0; }
+    .venues-grid { grid-template-columns: 1fr; }
+    footer .container { grid-template-columns: 1fr; gap: 28px; }
+    .hero-badge { right: -4px; bottom: 16px; max-width: 190px; padding: 12px 16px; box-shadow: 4px 4px 0 var(--sba-gold); }
+    .hero-badge-text { font-size: 14px; }
+    .officiate-promo { padding: 32px 24px; }
+    .announce-bar { padding: 10px 14px; gap: 10px; font-size: 13px; flex-wrap: nowrap; }
+    .announce-tag { font-size: 9px; padding: 2px 8px; }
+    .announce-text { font-size: 13px; line-height: 1.35; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="surrey_logo.webp" alt="Surrey Basketball Association crest">
+      <div>
+        <div class="brand-name">Surrey Basketball</div>
+        <div class="brand-sub">Association</div>
+      </div>
+    </a>
+    <nav class="header-links">
+      <a href="index.html" class="current">Home</a>
+      <a href="https://fimartin.my.canva.site/surreycvlplayoffs2025-26/" target="_blank" rel="noopener">Playoffs</a>
+      <a href="handbook.html">Handbook</a>
+      <a href="officiate.html">Officiate</a>
+      <a href="https://www.playhq.com/uk/basketball-england/org/surrey-basketball-association/214804d8" target="_blank" rel="noopener">Fixtures</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<a class="announce-bar" href="https://fimartin.my.canva.site/surreycvlplayoffs2025-26/" target="_blank" rel="noopener">
+  <span class="announce-tag">New</span>
+  <span class="announce-text">2025&ndash;26 playoff brackets are live &mdash; see qualifications, seedings &amp; key dates.</span>
+  <span class="announce-arrow">&rarr;</span>
+</a>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="kicker">Governing basketball in Surrey</span>
+      <h1>Where Surrey's next generation <em>learns the game</em>.</h1>
+      <p class="hero-lead">Surrey Basketball Association runs competitive leagues for players aged nine to adult &mdash; from our U10 Central Venue Leagues right through to senior men&rsquo;s and women&rsquo;s basketball. We&rsquo;re the county&rsquo;s affiliated body under Basketball England.</p>
+      <div class="hero-ctas">
+        <a href="handbook.html" class="btn btn-primary">Read the handbook &rarr;</a>
+        <a href="officiate.html" class="btn btn-secondary">Become an official</a>
+      </div>
+    </div>
+    <div class="hero-viz">
+      <div class="hero-ball" aria-hidden="true"></div>
+      <div class="hero-badge">
+        <div class="hero-badge-label">2025&ndash;26 season</div>
+        <div class="hero-badge-text">Games every Sunday, <em>September to May</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS STRIP ============ -->
+<section class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-value">U10&ndash;U18</div>
+        <div class="stat-label">Central Venue Leagues</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">4</div>
+        <div class="stat-label">CVL venues across the county</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">M &amp; W</div>
+        <div class="stat-label">Senior men's and women's leagues</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">County</div>
+        <div class="stat-label">Boys and girls squads</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUICK ACCESS TILES ============ -->
+<section class="band">
+  <div class="container">
+    <span class="kicker">Quick routes</span>
+    <h2>What brings you here <em>today?</em></h2>
+    <p class="lead">The fastest way into whatever you came for. If you're new to Surrey Basketball, start with the handbook.</p>
+
+    <div class="tiles">
+      <a class="tile" href="handbook.html">
+        <div class="tile-label">Rules &amp; regulations</div>
+        <h3>The CVL Handbook</h3>
+        <p>Everything from age group rules to fines, fees and the playoff format &mdash; fully searchable online.</p>
+        <span class="tile-cta">Open the handbook &rarr;</span>
+      </a>
+
+      <a class="tile" href="https://www.playhq.com/uk/basketball-england/org/surrey-basketball-association/214804d8" target="_blank" rel="noopener">
+        <div class="tile-label">Fixtures &amp; results</div>
+        <h3>Live on PlayHQ</h3>
+        <p>This weekend&rsquo;s games, league tables, and results across every division &mdash; all updated live.</p>
+        <span class="tile-cta">Open PlayHQ &rarr;</span>
+      </a>
+
+      <a class="tile" href="officiate.html">
+        <div class="tile-label">Referees &amp; table officials</div>
+        <h3>Officiate with us</h3>
+        <p>Paid match fees, real mentoring, and a genuine development pathway from Level 1 right through to National League.</p>
+        <span class="tile-cta">See the pathway &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE: AGE GROUPS ============ -->
+<section class="band" style="background: #fff;">
+  <div class="container">
+    <div class="feature-band">
+      <div class="feature-text">
+        <span class="kicker">For players &amp; parents</span>
+        <h2>A place in the league for <em>every age group</em>.</h2>
+        <p>Our Central Venue Leagues run from Under 10 through to Under 18, with games every Sunday across four venues in the county. Each age group has its own format, rules and development focus &mdash; designed to grow players as they grow.</p>
+        <ul>
+          <li><strong>U10 &amp; U12:</strong> passerelle rules, no zone defence, emphasis on playing time</li>
+          <li><strong>U14:</strong> faster tempo, full-court defence with 20-point rule</li>
+          <li><strong>U16 &amp; U18:</strong> full FIBA rules, two divisions, senior-junior competition</li>
+          <li><strong>Senior:</strong> men&rsquo;s and women&rsquo;s leagues for adult players</li>
+        </ul>
+        <a href="handbook.html#playing" class="btn btn-primary">See the age-group rules &rarr;</a>
+      </div>
+      <div class="feature-visual">
+        <div class="age-stack">
+          <div class="age-chip">
+            <div class="age-chip-num">U10</div>
+            <div class="age-chip-sub">Mixed</div>
+          </div>
+          <div class="age-chip">
+            <div class="age-chip-num">U12</div>
+            <div class="age-chip-sub">Mixed + Girls</div>
+          </div>
+          <div class="age-chip">
+            <div class="age-chip-num">U14</div>
+            <div class="age-chip-sub">Mixed</div>
+          </div>
+          <div class="age-chip">
+            <div class="age-chip-num">U16</div>
+            <div class="age-chip-sub">Mixed</div>
+          </div>
+          <div class="age-chip">
+            <div class="age-chip-num">U18</div>
+            <div class="age-chip-sub">Mixed</div>
+          </div>
+          <div class="age-chip">
+            <div class="age-chip-num">County</div>
+            <div class="age-chip-sub">Squads</div>
+          </div>
+          <div class="age-chip adult">
+            <div class="age-chip-num">Senior</div>
+            <div class="age-chip-sub">Men&rsquo;s &amp; women&rsquo;s leagues</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFFICIATE PROMO ============ -->
+<section class="band">
+  <div class="container">
+    <div class="officiate-promo">
+      <div class="officiate-promo-inner">
+        <div>
+          <span class="kicker">Become an official</span>
+          <h2>Every game needs <em>you</em>.</h2>
+          <p>Surrey CVL is paid work from game one &mdash; for referees on the court and table officials at the sideline. Full mentoring, a structured development pathway, and a clear route from your first whistle to the Basketball England national pathway.</p>
+          <a class="btn btn-gold" href="officiate.html">See the officiating pathway &rarr;</a>
+        </div>
+        <div class="officiate-roles">
+          <div class="officiate-role">
+            <div class="officiate-role-icon whistle" aria-hidden="true"></div>
+            <div class="officiate-role-text">
+              <div class="officiate-role-name">Referees</div>
+              <div class="officiate-role-detail">On the court. From &pound;15 a game, mentored from day one.</div>
+            </div>
+          </div>
+          <div class="officiate-role">
+            <div class="officiate-role-icon sheet" aria-hidden="true"></div>
+            <div class="officiate-role-text">
+              <div class="officiate-role-name">Table officials</div>
+              <div class="officiate-role-detail">Scorer &amp; timer, using PlayHQ e-scoring. From &pound;8 a game.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWS TEASER ============ -->
+<section class="band">
+  <div class="container">
+    <span class="kicker">Around the league</span>
+    <h2>What's happening <em>this season</em>.</h2>
+    <p class="lead">Regular updates on playoffs, rule changes and county events. Coaches and club contacts receive the full version by WhatsApp.</p>
+
+    <div class="news-grid">
+      <a class="news-item news-link" href="https://fimartin.my.canva.site/surreycvlplayoffs2025-26/" target="_blank" rel="noopener">
+        <div class="news-date">Playoffs 2025&ndash;26 &middot; Just announced</div>
+        <h3>Brackets published across all age groups</h3>
+        <p>Qualification criteria, seeding and key dates are now set for every division from U10 through to U18s, including U10 and U12 Girls.</p>
+        <span class="news-cta">View the brackets &rarr;</span>
+      </a>
+      <article class="news-item">
+        <div class="news-date">Rule update</div>
+        <h3>Girls' eligibility clarification</h3>
+        <p>Following a committee decision, girls registered with national league teams are no longer permitted to play down in boys' CVL divisions, including at playoffs.</p>
+      </article>
+      <article class="news-item">
+        <div class="news-date">Officiating</div>
+        <h3>New referee development programme</h3>
+        <p>A structured pathway from Level 1 through to the national leagues is now in place, with a pre-season tournament and dedicated referee coaches across all age groups.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VENUES ============ -->
+<section class="band" style="background: #fff;">
+  <div class="container">
+    <span class="kicker">Where we play</span>
+    <h2>Four venues across the <em>county</em>.</h2>
+    <p class="lead">CVL games are played every Sunday across these four venues, with all finals day fixtures held at ACS International School Cobham.</p>
+
+    <div class="venues-grid">
+      <div class="venue-card">
+        <div class="venue-name">Chessington Sports Centre</div>
+        <div class="venue-town">Chessington, KT9 2JS</div>
+        <span class="venue-ages">U16</span>
+      </div>
+      <div class="venue-card">
+        <div class="venue-name">Three Rivers Academy</div>
+        <div class="venue-town">Hersham, KT12 5EJ</div>
+        <span class="venue-ages">U10 &middot; U12</span>
+      </div>
+      <div class="venue-card">
+        <div class="venue-name">Tadworth Leisure &amp; Community Centre</div>
+        <div class="venue-town">Tadworth, KT20 5FB</div>
+        <span class="venue-ages">U16 &middot; U18</span>
+      </div>
+      <div class="venue-card">
+        <div class="venue-name">St John the Baptist School</div>
+        <div class="venue-town">Woking, GU22 9AL</div>
+        <span class="venue-ages">U12 &middot; U14</span>
+      </div>
+    </div>
+    <p style="margin-top: 18px; font-size: 14px; color: var(--muted);"><strong>Finals day:</strong> ACS International School Cobham, Portsmouth Road, Cobham, KT11 1BL.</p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+  <div class="narrow">
+    <h2>New to Surrey Basketball? <em>Start here.</em></h2>
+    <p>Looking for a club for your child, interested in officiating, or running a team considering joining the league &mdash; get in touch and we&rsquo;ll point you in the right direction.</p>
+    <a href="mailto:fimartin.basketball@gmail.com?subject=Surrey%20Basketball%20enquiry" class="btn btn-gold">Email the CVL team &rarr;</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-about">
+      <h5>Surrey Basketball Association</h5>
+      <p>Governing junior and senior basketball across the county of Surrey, affiliated to Basketball England. A voluntary association run by volunteers, for the benefit of everyone who plays, coaches, officiates or supports the game in the county.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/surreybasketball/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/surreybasketballassociation/" target="_blank" rel="noopener" aria-label="Instagram">Ig</a>
+        <a href="https://twitter.com/SurreyBasketbal" target="_blank" rel="noopener" aria-label="Twitter">X</a>
+      </div>
+    </div>
+    <div>
+      <h5>The league</h5>
+      <ul>
+        <li><a href="handbook.html">Junior CVL handbook</a></li>
+        <li><a href="SBA_Senior_Handbook_202526.pdf" target="_blank" rel="noopener">Senior handbook (PDF)</a></li>
+        <li><a href="handbook.html#playing">Age-group rules</a></li>
+        <li><a href="handbook.html#fines">Fees &amp; fines</a></li>
+        <li><a href="handbook.html#committee">Committee</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Officiating</h5>
+      <ul>
+        <li><a href="officiate.html">Pathway</a></li>
+        <li><a href="officiate.html#pathway">Development tiers</a></li>
+        <li><a href="officiate.html#pay">Match fees</a></li>
+        <li><a href="officiate.html#start">Get started</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>External</h5>
+      <ul>
+        <li><a href="https://www.playhq.com/uk/basketball-england/org/surrey-basketball-association/214804d8" target="_blank" rel="noopener">PlayHQ (fixtures)</a></li>
+        <li><a href="https://www.basketballengland.co.uk" target="_blank" rel="noopener">Basketball England</a></li>
+        <li><a href="mailto:fimartin.basketball@gmail.com">Contact the CVL team</a></li>
+      </ul>
+    </div>
+
+    <div class="affiliations">
+      <span class="affiliations-label">Affiliated to</span>
+      <div class="affiliations-logos">
+        <a href="https://www.basketballengland.co.uk" target="_blank" rel="noopener" aria-label="Basketball England">
+          <img src="BE_logo.png" alt="Basketball England">
+        </a>
+        <a href="https://www.basketballengland.co.uk/play/nbl/" target="_blank" rel="noopener" aria-label="National Basketball League">
+          <img src="nbl_logo.png" alt="National Basketball League">
+        </a>
+        <a href="https://www.basketballengland.co.uk/play/junior-nbl/" target="_blank" rel="noopener" aria-label="Junior National Basketball League">
+          <img src="jnr_nbl_logo.png" alt="Junior National Basketball League">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    &copy; Surrey Basketball Association &middot; 2025&ndash;26 season
+  </div>
+</footer>
+
+</body>
+</html>

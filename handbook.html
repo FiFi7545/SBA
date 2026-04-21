@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junior CVL Handbook 2025&ndash;26 &mdash; Surrey Basketball</title>
+<meta name="description" content="The Surrey Basketball Association Junior Central Venue Leagues Handbook for the 2025–26 season — searchable online.">
+
+<style>
+  :root {
+    --sba-red: #B8241C;
+    --sba-red-dark: #8A1712;
+    --sba-gold: #D4A93A;
+    --sba-gold-soft: #E8C667;
+    --cream: #FAF6EC;
+    --ink: #1A1613;
+    --ink-soft: #3E3731;
+    --muted: #6B5F55;
+    --line: #E4DCC8;
+    --hover: #F3EAD3;
+    --highlight: #FFF4CC;
+    --serif: Georgia, "Iowan Old Style", Charter, Cambria, Times, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  a { color: var(--sba-red); }
+
+  /* ================= HEADER ================= */
+  header.site-header {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .brand-logo {
+    width: auto;
+    height: 44px;
+    flex-shrink: 0;
+    display: block;
+  }
+  .brand-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .brand-sub {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .header-links {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 14px;
+  }
+  .header-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-weight: 600;
+    transition: background 0.15s;
+  }
+  .header-links a:hover { background: var(--hover); color: var(--ink); }
+  .header-links a.current {
+    background: var(--sba-red);
+    color: #fff;
+  }
+
+  /* ================= PAGE HEADER ================= */
+  .page-header {
+    background:
+      radial-gradient(ellipse at top right, rgba(212, 169, 58, 0.14), transparent 50%),
+      radial-gradient(ellipse at bottom left, rgba(184, 36, 28, 0.06), transparent 50%),
+      linear-gradient(180deg, var(--cream) 0%, #F4EBD1 100%);
+    padding: 48px 0 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .kicker {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sba-red);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(36px, 5.5vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  h1 em { font-style: italic; color: var(--sba-red); font-weight: 600; }
+  .page-header .lead {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin-bottom: 20px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .meta-row span strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  /* ================= LAYOUT ================= */
+  .handbook-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 56px;
+    align-items: start;
+    padding: 48px 0 96px;
+  }
+
+  /* ================= SIDEBAR: SEARCH + TOC ================= */
+  .handbook-sidebar {
+    position: sticky;
+    top: 88px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding-right: 16px;
+    border-right: 1px solid var(--line);
+  }
+
+  .search-wrap {
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .search-input {
+    width: 100%;
+    padding: 12px 14px 12px 40px;
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    background: #fff;
+    -webkit-appearance: none;
+  }
+  .search-input:focus {
+    outline: none;
+    border-color: var(--sba-red);
+  }
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--muted);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .search-icon::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 75%;
+    width: 8px;
+    height: 2px;
+    background: var(--muted);
+    transform: translateY(-2px) rotate(45deg);
+    transform-origin: left center;
+  }
+  .search-clear {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    background: var(--muted);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    display: none;
+    padding: 0;
+    line-height: 22px;
+  }
+  .search-clear:hover { background: var(--sba-red); }
+  body.searching .search-clear { display: block; }
+  .search-status {
+    padding: 8px 4px 16px;
+    font-size: 12px;
+    color: var(--muted);
+    min-height: 16px;
+  }
+  .search-status strong { color: var(--sba-red); }
+
+  .toc-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 16px 0 10px;
+  }
+  .toc-list {
+    list-style: none;
+    padding: 0;
+  }
+  .toc-list li a {
+    display: block;
+    padding: 5px 0 5px 12px;
+    margin-left: -14px;
+    border-left: 2px solid transparent;
+    font-size: 14px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    line-height: 1.35;
+  }
+  .toc-list li a:hover {
+    color: var(--sba-red);
+    border-left-color: var(--sba-gold);
+  }
+  .toc-list li a.toc-active {
+    color: var(--sba-red);
+    border-left-color: var(--sba-red);
+    font-weight: 600;
+  }
+  .toc-list li.toc-section {
+    margin-top: 14px;
+  }
+  .toc-list li.toc-section > a {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 13px;
+  }
+  .toc-list li.toc-sub > a {
+    font-size: 13px;
+    padding-left: 26px;
+    color: var(--muted);
+  }
+
+  /* ================= CONTENT ================= */
+  .handbook-content { max-width: 780px; }
+
+  .rule-block {
+    scroll-margin-top: 88px;
+    margin-bottom: 36px;
+  }
+  .rule-block[data-hidden="true"] { display: none; }
+
+  .handbook-content h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(26px, 3vw, 34px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 40px 0 14px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .handbook-content > .rule-block:first-child h2,
+  .handbook-content h2.first {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .handbook-content h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.25;
+    color: var(--sba-red);
+    margin: 28px 0 10px;
+  }
+  .handbook-content h4 {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 20px 0 8px;
+  }
+  .handbook-content p {
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  .handbook-content ul, .handbook-content ol {
+    margin: 0 0 16px 22px;
+  }
+  .handbook-content li {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .handbook-content strong { color: var(--ink); font-weight: 700; }
+
+  .handbook-content .callout {
+    background: #fff;
+    border-left: 4px solid var(--sba-gold);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .handbook-content .callout p { margin-bottom: 6px; }
+  .handbook-content .callout p:last-child { margin-bottom: 0; }
+
+  .key-contacts {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-top: 8px;
+  }
+  .key-contacts .contact-row {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .key-contacts .contact-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .key-contacts .contact-row:first-child { padding-top: 0; }
+  .contact-role {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sba-red);
+    margin-bottom: 2px;
+  }
+  .contact-name {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 15px;
+  }
+  .contact-email {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .venue-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .venue-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .venue-name {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  .venue-address {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+  .venue-ages {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--sba-red);
+    background: rgba(184, 36, 28, 0.08);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  /* Fee card */
+  .fee-table {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 12px 0 20px;
+  }
+  .fee-table .fee-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    padding: 12px 20px;
+    gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .fee-table .fee-row:last-child { border-bottom: none; }
+  .fee-table .fee-row.head {
+    background: var(--hover);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .fee-row .fee-age {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .fee-row .fee-val {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--sba-red);
+  }
+
+  /* Search highlight */
+  mark {
+    background: var(--highlight);
+    color: var(--ink);
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  /* No results */
+  .search-empty {
+    background: #fff;
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    color: var(--muted);
+  }
+  .search-empty strong { color: var(--ink); }
+
+  /* Senior handbook banner */
+  .senior-notice {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--sba-gold);
+    padding: 18px 20px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .senior-notice-icon {
+    width: 40px;
+    height: 48px;
+    background: var(--sba-red);
+    color: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .senior-notice-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-top: 8px solid var(--cream);
+  }
+  .senior-notice-body {
+    flex: 1;
+    min-width: 200px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+  .senior-notice-body strong { color: var(--ink); }
+  .senior-notice-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: var(--sba-red);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 100px;
+    flex-shrink: 0;
+    transition: transform 0.15s;
+  }
+  .senior-notice-cta:hover { transform: translateY(-1px); }
+
+  /* ================= FOOTER ================= */
+  footer {
+    background: var(--ink);
+    color: rgba(250, 246, 236, 0.75);
+    padding: 40px 0 24px;
+  }
+  footer .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+  }
+  footer h5 {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sba-gold);
+    margin-bottom: 14px;
+  }
+  footer p, footer a, footer li {
+    color: rgba(250, 246, 236, 0.7);
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 1.6;
+  }
+  footer ul { list-style: none; padding: 0; }
+  footer ul li { margin-bottom: 6px; }
+  footer a:hover { color: var(--sba-gold); }
+
+  /* Affiliations strip */
+  .affiliations {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(250, 246, 236, 0.1);
+    margin-top: 24px;
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .affiliations-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250, 246, 236, 0.5);
+    flex-shrink: 0;
+  }
+  .affiliations-logos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .affiliations-logos a {
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 100px;
+    padding: 6px 10px;
+    transition: transform 0.2s;
+  }
+  .affiliations-logos a:hover { transform: translateY(-2px); }
+  .affiliations-logos img {
+    height: 30px;
+    width: auto;
+    display: block;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(250, 246, 236, 0.1);
+    margin-top: 28px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(250, 246, 236, 0.5);
+  }
+
+  /* ================= PRINT ================= */
+  @media print {
+    header.site-header, .handbook-sidebar, footer { display: none; }
+    .handbook-layout { grid-template-columns: 1fr; padding: 0; }
+    .page-header { padding: 20px 0; }
+    body { background: white; font-size: 11pt; }
+    .rule-block { page-break-inside: avoid; }
+    h1, h2, h3 { page-break-after: avoid; }
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 900px) {
+    .handbook-layout {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 24px 0 64px;
+    }
+    .handbook-sidebar {
+      position: static;
+      max-height: none;
+      border-right: none;
+      padding-right: 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .toc-list { max-height: 280px; overflow-y: auto; }
+    .header-links a { display: none; }
+    .header-links a.current { display: inline-block; }
+  }
+  @media (max-width: 600px) {
+    .header-inner { padding: 12px 16px; gap: 12px; }
+    .brand-sub { display: none; }
+    .venue-list { grid-template-columns: 1fr; }
+    .fee-table .fee-row { grid-template-columns: 70px 70px 1fr; padding: 10px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="surrey_logo.webp" alt="Surrey Basketball Association crest">
+      <div>
+        <div class="brand-name">Surrey Basketball</div>
+        <div class="brand-sub">Association</div>
+      </div>
+    </a>
+    <div class="header-links">
+      <a href="index.html">Home</a>
+      <a href="https://fimartin.my.canva.site/surreycvlplayoffs2025-26/" target="_blank" rel="noopener">Playoffs</a>
+      <a href="handbook.html" class="current">Handbook</a>
+      <a href="officiate.html">Officiate</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PAGE HEADER ============ -->
+<div class="page-header">
+  <div class="container">
+    <span class="kicker">Rules &amp; regulations</span>
+    <h1>CVL Handbook <em>2025&ndash;26</em>.</h1>
+    <p class="lead">The Junior Central Venue Leagues Handbook for the 2025&ndash;26 season, made searchable. Use the search on the left to jump straight to a rule, or navigate by section.</p>
+    <div class="meta-row">
+      <span><strong>Season:</strong> 21 September 2025 &ndash; 10 May 2026</span>
+      <span><strong>Age groups:</strong> U10 &ndash; U18</span>
+      <span><strong>Format:</strong> Sunday Central Venue Leagues</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MAIN LAYOUT ============ -->
+<div class="container">
+  <div class="handbook-layout">
+
+    <!-- ====== SIDEBAR ====== -->
+    <aside class="handbook-sidebar">
+      <div class="search-wrap">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input type="search" class="search-input" id="hb-search" placeholder="Search the handbook..." aria-label="Search the handbook">
+        <button class="search-clear" id="hb-clear" aria-label="Clear search" type="button">&times;</button>
+      </div>
+      <div class="search-status" id="hb-status" aria-live="polite"></div>
+
+      <div class="toc-label">Contents</div>
+      <ul class="toc-list" id="hb-toc">
+        <li class="toc-section"><a href="#committee">Executive Committee</a></li>
+        <li class="toc-section"><a href="#mission">Mission &amp; Values</a></li>
+        <li class="toc-section"><a href="#venues">CVL Venues</a></li>
+
+        <li class="toc-section"><a href="#rules">Rules &amp; Regulations</a></li>
+        <li class="toc-sub"><a href="#safeguarding">1. Child Protection &amp; Safeguarding</a></li>
+        <li class="toc-sub"><a href="#season">2. Playing Season</a></li>
+        <li class="toc-sub"><a href="#teams">3. Teams in Division</a></li>
+        <li class="toc-sub"><a href="#points">4. League Points</a></li>
+        <li class="toc-sub"><a href="#nonplay">5. Non-playing Regulations</a></li>
+        <li class="toc-sub"><a href="#player">6. Player Regulations</a></li>
+        <li class="toc-sub"><a href="#disq">7. Player Disqualification</a></li>
+        <li class="toc-sub"><a href="#appeals">8. Appeals Procedure</a></li>
+        <li class="toc-sub"><a href="#fines">9. Fines</a></li>
+        <li class="toc-sub"><a href="#misc">10. Miscellaneous</a></li>
+        <li class="toc-sub"><a href="#general">11. General League Rules</a></li>
+        <li class="toc-sub"><a href="#format">12. League Format</a></li>
+        <li class="toc-sub"><a href="#licence">13. Licence Cards</a></li>
+        <li class="toc-sub"><a href="#playoffs">14. Playoffs Registration</a></li>
+        <li class="toc-sub"><a href="#gamefees">15. Game Fees</a></li>
+        <li class="toc-sub"><a href="#referees">16. Referees</a></li>
+        <li class="toc-sub"><a href="#table">17. Table Officials</a></li>
+        <li class="toc-sub"><a href="#commissioners">18. Commissioners</a></li>
+
+        <li class="toc-section"><a href="#playing">Playing Rules &ndash; Age Specific</a></li>
+        <li class="toc-sub"><a href="#u10">U10 &amp; U11 Girls</a></li>
+        <li class="toc-sub"><a href="#u12">U12 &amp; U13 Girls</a></li>
+        <li class="toc-sub"><a href="#u14">U14 Mixed</a></li>
+        <li class="toc-sub"><a href="#u16">U16 Mixed</a></li>
+        <li class="toc-sub"><a href="#u18">U18 Mixed</a></li>
+
+        <li class="toc-section"><a href="#conduct">Codes of Conduct</a></li>
+        <li class="toc-section"><a href="#safeguarding-full">Safeguarding</a></li>
+        <li class="toc-section"><a href="#tournaments">Tournaments &amp; Events</a></li>
+      </ul>
+    </aside>
+
+    <!-- ====== CONTENT ====== -->
+    <main class="handbook-content" id="hb-content">
+
+      <div id="search-empty" class="search-empty" style="display:none;">
+        <strong>No matches found.</strong><br>
+        Try a different word, or <a href="#" id="search-clear-link">clear your search</a> to see the full handbook.
+      </div>
+
+      <aside class="senior-notice">
+        <div class="senior-notice-icon" aria-hidden="true">PDF</div>
+        <div class="senior-notice-body">
+          <strong>Playing in the senior league?</strong>
+          This handbook covers the junior CVL (U10&ndash;U18). Senior men&rsquo;s and women&rsquo;s league rules are in a separate document.
+        </div>
+        <a class="senior-notice-cta" href="SBA_Senior_Handbook_202526.pdf" target="_blank" rel="noopener">Senior handbook &rarr;</a>
+      </aside>
+
+      <!-- ========= COMMITTEE ========= -->
+      <section class="rule-block" id="committee" data-search-keywords="committee contact email chair treasurer administrator competitions officials">
+        <h2 class="first">Executive Committee 2025&ndash;26</h2>
+
+        <div class="key-contacts">
+          <div class="contact-row">
+            <div class="contact-role">Chairperson</div>
+            <div class="contact-name">Warren Bobb</div>
+            <div class="contact-email">chairman@surreybasketball.org.uk</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-role">Treasurer</div>
+            <div class="contact-name">Paddy Latham</div>
+            <div class="contact-email">treasurer@surreybasketball.org.uk</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-role">Administrator</div>
+            <div class="contact-name">Miranda Leach</div>
+            <div class="contact-email">administrator@surreybasketball.org.uk</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-role">Competitions Manager</div>
+            <div class="contact-name">Steve Stredwick</div>
+            <div class="contact-email">steve@surreybasketball.org.uk</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-role">Officials Development Officer</div>
+            <div class="contact-name">Sharon Rennie</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-role">Committee Members</div>
+            <div class="contact-name">Evan York &middot; Miguel Francis</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-role">CVL Coordinators</div>
+            <div class="contact-name">Fi Martin &middot; Kerri Comerford</div>
+            <div class="contact-email">fimartin.basketball@gmail.com &middot; kerricomerford70@hotmail.com</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========= MISSION ========= -->
+      <section class="rule-block" id="mission" data-search-keywords="mission values ethical responsible dedication">
+        <h2>Mission &amp; Values</h2>
+        <p>The SBA is a voluntary association, responsible for administering and governing basketball at junior and senior levels within the county of Surrey, South East England. We share the same mission statement as Basketball England:</p>
+        <div class="callout">
+          <p><em>&ldquo;To provide an inspirational basketball experience for more people, more often.&rdquo;</em></p>
+        </div>
+
+        <h3>SBA Values</h3>
+        <p><strong>Ethical and Transparent.</strong> We must be reliable, credible, fair and trustworthy as an organisation.</p>
+        <p><strong>Responsible.</strong> We have a responsibility to the sport, to all involved in the sport within the county, and to the promotion, development and furthering of the game at all levels.</p>
+        <p><strong>Dedication.</strong> All involved in the SBA perform their roles to the best of their abilities with passion and drive, maintaining a professional, pro-active approach.</p>
+      </section>
+
+      <!-- ========= VENUES ========= -->
+      <section class="rule-block" id="venues" data-search-keywords="venues venue location chessington tadworth hersham woking cobham three rivers sjb st john">
+        <h2>CVL Venues</h2>
+        <p>Surrey Central Venue League games are played at four venues across the county, with all finals held at ACS International School Cobham.</p>
+        <div class="venue-list">
+          <div class="venue-card">
+            <div class="venue-name">Chessington Sports Centre</div>
+            <div class="venue-address">Garrison Lane, Chessington, KT9 2JS</div>
+            <span class="venue-ages">U16</span>
+          </div>
+          <div class="venue-card">
+            <div class="venue-name">Three Rivers Academy</div>
+            <div class="venue-address">Bell Farm Way, Hersham, Walton-on-Thames, KT12 5EJ</div>
+            <span class="venue-ages">U10 &middot; U12</span>
+          </div>
+          <div class="venue-card">
+            <div class="venue-name">Tadworth Leisure &amp; Community Centre</div>
+            <div class="venue-address">Preston Manor Road, Tadworth, KT20 5FB</div>
+            <span class="venue-ages">U16 &middot; U18</span>
+          </div>
+          <div class="venue-card">
+            <div class="venue-name">St John the Baptist School</div>
+            <div class="venue-address">Elmbridge Lane, Woking, GU22 9AL</div>
+            <span class="venue-ages">U12 &middot; U14</span>
+          </div>
+          <div class="venue-card">
+            <div class="venue-name">ACS International School Cobham</div>
+            <div class="venue-address">Portsmouth Road, Cobham, KT11 1BL</div>
+            <span class="venue-ages">All finals</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========= RULES PARENT ========= -->
+      <section class="rule-block" id="rules" data-search-keywords="rules regulations overview">
+        <h2>Rules &amp; Regulations</h2>
+        <p>The CVL Committee will use its discretion in the application of these rules as appropriate.</p>
+      </section>
+
+      <!-- ========= 1. SAFEGUARDING ========= -->
+      <section class="rule-block" id="safeguarding" data-search-keywords="1 child protection safeguarding photography images video consent basketball england">
+        <h3>1. Child Protection &amp; Safeguarding</h3>
+        <p>The Surrey Basketball Association is committed to the protection of children and vulnerable adults in accordance with Basketball England&rsquo;s (BE) Child and Vulnerable Adults Protection Policy and Procedures, which may be accessed on the BE website.</p>
+        <p>Where possible we will not permit photographs, film, video or other images of children or vulnerable adults to be taken or used without the consent of the child/vulnerable adult AND their parents/guardians or carers.</p>
+        <ul>
+          <li>Clubs must notify SBA at the earliest time possible if they do not want images to be taken during any SBA event.</li>
+          <li>Clubs must ensure that all children, parents/guardians or carers are aware of the Child Protection guidance with regards to the use of images.</li>
+          <li>The SBA does not want to prevent family, friends or other spectators from being able to take images at basketball events for legitimate reasons. Anyone taking photos/videos must register themselves with the commissioner at the event. Images should be for personal or club use only and should <strong>not</strong> be published on social media without the specific consent of all involved.</li>
+        </ul>
+        <p>Further information regarding the taking of, and use of images, can be found on the Basketball England website.</p>
+      </section>
+
+      <!-- ========= 2. PLAYING SEASON ========= -->
+      <section class="rule-block" id="season" data-search-keywords="2 playing season dates 21 september 2025 10 may 2026 finals">
+        <h3>2. Playing Season</h3>
+        <p>The playing season shall be within the dates of <strong>21 September 2025</strong> and the second finals day scheduled <strong>10 May 2026</strong>.</p>
+      </section>
+
+      <!-- ========= 3. TEAMS ========= -->
+      <section class="rule-block" id="teams" data-search-keywords="3 teams division players game playoffs number">
+        <h3>3. Number of Teams in a Division / Players in a Game</h3>
+        <ul>
+          <li>The number of teams in a division will be at the discretion of the CVL Committee, together with playoffs.</li>
+          <li>Playoffs will be arranged but dependent on the number of teams in each age group; format to be decided by the CVL Committee.</li>
+        </ul>
+      </section>
+
+      <!-- ========= 4. LEAGUE POINTS ========= -->
+      <section class="rule-block" id="points" data-search-keywords="4 league points winning losing defaulting three one">
+        <h3>4. League Points</h3>
+        <p>Three points shall be awarded to the winning team and one point to the losing team. No points shall be awarded to a defaulting team.</p>
+      </section>
+
+      <!-- ========= 5. NON-PLAYING ========= -->
+      <section class="rule-block" id="nonplay" data-search-keywords="5 non-playing regulations joining fee £50 withdraw agm disciplinary committee">
+        <h3>5. Non-playing Regulations</h3>
+        <ul>
+          <li>All clubs are required to pay a one-off joining fee of <strong>&pound;50.00</strong> to the Surrey Basketball Association as a condition of entry into the Association&rsquo;s competitions for which additional entry fees will be charged. Any unpaid fines will be deducted from this at the start of the season. The Joining Fee will then require &lsquo;topping up&rsquo; prior to the start of the following season.</li>
+          <li>Any club that withdraws from SBA competitions and who subsequently re-joins will be subject to a new joining fee.</li>
+          <li>It is a condition of entry to the Surrey League that each club must send a representative to the Annual General Meeting at the end of the Season. A fine will be incurred for not doing so (see Section 9 on Fines).</li>
+          <li>For all disciplinaries, the Surrey Basketball Association Disciplinary Committee will comprise 3 non-involved members from the Surrey Basketball Association Committee, appointed through the Competitions Manager.</li>
+        </ul>
+      </section>
+
+      <!-- ========= 6. PLAYER ========= -->
+      <section class="rule-block" id="player" data-search-keywords="6 player regulations kit uniform vest shorts compression t-shirt colour registration playhq licence transfer fixture postpone forfeit 15 minutes tip-off">
+        <h3>6. Player Regulations</h3>
+
+        <h4>Kit Regulations</h4>
+        <ul>
+          <li>All teams shall wear uniform (vest and shorts). Teams must observe the latest BE regulations regarding compression garments worn underneath kit (must be skin tight, and one solid colour). T-shirts are <strong>not</strong> allowed. Players will be asked to remove any item that is not regulation kit.</li>
+          <li>All teams should declare their primary kit colour to the relevant CVL coordinator prior to the beginning of the season. In the event of a colour clash, the second named team on the fixture list will change into alternative colours.</li>
+          <li>All CVL teams should have 2 kits of contrasting colours.</li>
+          <li>In any competition final or semi-final event staged by the SBA, players will <strong>not</strong> be allowed on court without the correct team uniform.</li>
+        </ul>
+
+        <h4>Registration</h4>
+        <ul>
+          <li>All clubs competing in the Surrey Basketball Association Junior League must register all of its participants through PlayHQ.</li>
+          <li>All players must be registered and verified before the first CVL session. Access to licence cards via the HoopsHQ app.</li>
+          <li>All teams must complete their team lists on PlayHQ prior to attending the game. This includes coaches.</li>
+          <li>Licence cards must be readily available to the commissioner and/or referee on request.</li>
+          <li>Coaches and referees should be appropriately licenced also through PlayHQ.</li>
+        </ul>
+
+        <h4>Clubs Having More Than One Team in the League</h4>
+        <ul>
+          <li>No player may play for more than one team in any Surrey competition within the same age group category.</li>
+          <li>Clubs with two or more teams (at the same age group) must provide definitive lists for each team to the relevant CVL Co-ordinator before they play their first game of the season.</li>
+          <li>If any players join a team part-way through a season the club must assign them to one of the teams and advise the relevant CVL Co-Ordinator. They will stay on that team for the remainder of the season.</li>
+        </ul>
+
+        <h4>Transfers</h4>
+        <p>A player may transfer from one club to another only by written permission from the Surrey CVL Committee. Written intention to transfer must be received from the player and the two clubs concerned before permission can be granted.</p>
+
+        <h4>Fixture Dates</h4>
+        <p>The schedules displayed on PlayHQ / HoopsHQ shall be deemed to be <strong>confirmed</strong>. Fixtures can only be changed in exceptional circumstances and at the permission of the CVL Committee.</p>
+
+        <h4>Postponed Games</h4>
+        <p>Hopefully the game will be re-arranged by mutual consent prior to the league closure dates. The matter will be resolved by the Surrey CVL Committee, whose decision will be final.</p>
+
+        <h4>Forfeiture of Points</h4>
+        <p>All games shall be played on the scheduled day, but any team failing to appear on court, ready to play, within <strong>15 minutes</strong> of the scheduled Jump Ball time may be liable to forfeit all points at the discretion of the Surrey CVL Committee. Any team failing to appear on court may, at the discretion of the Surrey CVL Committee, be invoiced for expenses incurred by SBA.</p>
+      </section>
+
+      <!-- ========= 7. DISQUALIFICATION ========= -->
+      <section class="rule-block" id="disq" data-search-keywords="7 player disqualification disqualifying foul ban two game technical unsportsmanlike disciplinary committee">
+        <h3>7. Player Disqualification</h3>
+        <p>If a player or coach commits a disqualifying foul, s/he <strong>must</strong> leave the arena. There will be an automatic <strong>two (2) game ban</strong> from the team&rsquo;s next Surrey League games. If this ban is ignored, the team shall forfeit the game in which the ban should have been effective.</p>
+        <p>The ban will <strong>not</strong> apply for disqualifications as a result of 2 Technical/Unsportsmanlike fouls; however further sanctions may be imposed depending on the nature of the fouls.</p>
+        <ul>
+          <li>A full report by the referees must be sent to the Competitions Officer within <strong>2 working days</strong>. A player/coach who is disqualified can neither play nor coach during the two match ban.</li>
+          <li>Teams will receive notification of the banned player/coach or coach/player.</li>
+          <li>All disqualifications must be referred to the Disciplinary Committee where further action may be taken. All case reviews will be done on an individual basis and the club will be notified of all action to be taken and decisions made by the Disciplinary Committee. The Player, Coach or Player/Coach&rsquo;s previous disciplinary record <strong>will</strong> be taken into consideration.</li>
+        </ul>
+      </section>
+
+      <!-- ========= 8. APPEALS ========= -->
+      <section class="rule-block" id="appeals" data-search-keywords="8 appeals procedure fine fee £50 chairperson 7 days">
+        <h3>8. Appeals Procedure</h3>
+        <p>Clubs, teams or individual members have the right of appeal to the Surrey Basketball Association Committee on any fine imposed or on any decision that affects them within <strong>7 days</strong> of that fine or decision, or on any dispute considered by the Surrey Basketball Association Committee to be within the Association&rsquo;s jurisdiction. Appeals received outside this timeframe will <strong>only</strong> be considered in exceptional circumstances.</p>
+        <p>Any appeal must be accompanied by the specified <strong>APPEAL FEE of &pound;50.00</strong>. On receipt of the appropriate fee the Appeals Committee (the Surrey Basketball Association Chairperson, plus 2 non-involved members from the CVL Committee) will convene and review the appeal.</p>
+        <p>Should the appeal be upheld, any monies paid may be returned as the Surrey Basketball Association deems appropriate. The club, team or individual lodging the appeal shall have the right to be represented when the appeal is heard. Reasonable notice having been given to the party or parties concerned.</p>
+      </section>
+
+      <!-- ========= 9. FINES ========= -->
+      <section class="rule-block" id="fines" data-search-keywords="9 fines ringer unregistered ineligible forfeit tip-off table official agm £30 £50 £20 £10 £5">
+        <h3>9. Fines</h3>
+        <p>A CVL Co-Ordinator or Commissioner will notify the Treasurer of any breach of rules incurring a fine. The Treasurer will then issue the appropriate fine to the club(s) concerned. Fine details will be reported at the next Surrey Executive Committee monthly meeting for ratification.</p>
+
+        <h4>Fine reasons and amounts</h4>
+        <ul>
+          <li><strong>Ineligible and unregistered players</strong> (ringer / plays for another team) &mdash; club fined up to <strong>&pound;50.00</strong> plus loss of game.</li>
+          <li><strong>Forfeiting a scheduled fixture, 8+ days&rsquo; notice</strong> &mdash; <strong>&pound;30</strong> plus loss of game.</li>
+          <li><strong>Forfeiting a scheduled fixture, less than 7 days&rsquo; notice</strong> &mdash; game fee for both teams minus cost of table officials, plus loss of game.</li>
+          <li><strong>Failure to make scheduled tip-off time</strong> (as reported) &mdash; <strong>&pound;5.00</strong>.</li>
+          <li><strong>Failure to provide a competent table official capable of completing an official scoresheet:</strong>
+            <ul>
+              <li>1st offence: <strong>&pound;5.00</strong> per game</li>
+              <li>2nd offence: <strong>&pound;10.00</strong> per game</li>
+              <li>3rd &amp; subsequent offences: <strong>&pound;10.00</strong> plus 1 league point deducted</li>
+            </ul>
+          </li>
+          <li><strong>Club non-attendance at SBA AGM</strong> &mdash; <strong>&pound;20.00</strong> (in line with Seniors).</li>
+        </ul>
+      </section>
+
+      <!-- ========= 10. MISC ========= -->
+      <section class="rule-block" id="misc" data-search-keywords="10 miscellaneous basketball england rules commissioner ad hoc">
+        <h3>10. Miscellaneous</h3>
+        <ul>
+          <li>Any other situations not covered by Surrey Basketball rules above will be sanctioned under Basketball England rules.</li>
+          <li>Surrey Basketball will appoint a commissioner to a game to report back to the Committee on an ad hoc basis.</li>
+        </ul>
+      </section>
+
+      <!-- ========= 11. GENERAL ========= -->
+      <section class="rule-block" id="general" data-search-keywords="11 general league rules table equipment basketballs warm up referees cash fees">
+        <h3>11. General League Rules (all age groups)</h3>
+        <ul>
+          <li>The SBA provides table equipment for all CVL (Junior League) games. Teams <strong>must</strong> provide their own basketballs for warm-ups.</li>
+          <li>Referees will be appointed by the CVL Co-ordinators. Each team must provide one competent table official for all games. Failure to provide a competent table official will result in a fine (see Section 9 on Fines).</li>
+          <li><strong>Game fees at each CVL session must be paid in cash</strong> (no exceptions).</li>
+        </ul>
+      </section>
+
+      <!-- ========= 12. FORMAT ========= -->
+      <section class="rule-block" id="format" data-search-keywords="12 league format tie head-to-head points scored conceded difference">
+        <h3>12. League Format</h3>
+        <ul>
+          <li>The teams in each league play each other a number of times dependent upon the number of teams.</li>
+          <li>The teams to play each other in the Final will be determined using the play-off system.</li>
+        </ul>
+
+        <h4>Tiebreakers</h4>
+        <p>In the event of a tie between teams at the end of the season, league standings will be determined by the following criteria in order:</p>
+        <ol>
+          <li>A table shall be compiled taking into account only the matches played between teams involved in the tie. The teams shall then be placed in accordance with the points awarded for wins in this table.</li>
+          <li>In the event of further equality, the difference between the actual points scored and points conceded in these matches will be taken into account.</li>
+          <li>In the event of further equality, the difference between actual points scored and points conceded in all matches in the League will be taken into account.</li>
+        </ol>
+      </section>
+
+      <!-- ========= 13. LICENCE CARDS ========= -->
+      <section class="rule-block" id="licence" data-search-keywords="13 licence cards hoopshq app registered">
+        <h3>13. Licence Cards</h3>
+        <ul>
+          <li>All players must be registered in order to participate in a Surrey League fixture.</li>
+          <li>Licence cards must be produced via the HoopsHQ app for each game.</li>
+          <li>No player or coach will be allowed onto a CVL Junior League court without the above.</li>
+        </ul>
+      </section>
+
+      <!-- ========= 14. PLAYOFFS REGISTRATION ========= -->
+      <section class="rule-block" id="playoffs" data-search-keywords="14 playoffs cup final registration 4 games injury 31 january">
+        <h3>14. Play Offs / Cup Final Registration</h3>
+        <p>All players need to have played in at least <strong>4 CVL junior league games</strong> during the regular season to be eligible to play in the play-offs/finals. In the case of injury, the CVL sub-committee must be informed for consideration to allow the player to participate in the play-offs/finals. In this case, players need to be registered before <strong>31 January 2026</strong>.</p>
+      </section>
+
+      <!-- ========= 15. GAME FEES ========= -->
+      <section class="rule-block" id="gamefees" data-search-keywords="15 game fees cash u10 u12 u14 u16 u18 £45 £60 £85">
+        <h3>15. Game Fees</h3>
+        <p>Game fees must be paid to the relevant Commissioner <strong>in cash</strong> prior to the game.</p>
+        <div class="fee-table">
+          <div class="fee-row head">
+            <div>Age group</div>
+            <div>Game fee</div>
+            <div></div>
+          </div>
+          <div class="fee-row">
+            <div class="fee-age">U10</div>
+            <div class="fee-val">&pound;45</div>
+            <div></div>
+          </div>
+          <div class="fee-row">
+            <div class="fee-age">U12</div>
+            <div class="fee-val">&pound;60</div>
+            <div></div>
+          </div>
+          <div class="fee-row">
+            <div class="fee-age">U14</div>
+            <div class="fee-val">&pound;60</div>
+            <div></div>
+          </div>
+          <div class="fee-row">
+            <div class="fee-age">U16</div>
+            <div class="fee-val">&pound;85</div>
+            <div></div>
+          </div>
+          <div class="fee-row">
+            <div class="fee-age">U18</div>
+            <div class="fee-val">&pound;85</div>
+            <div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========= 16. REFEREES ========= -->
+      <section class="rule-block" id="referees" data-search-keywords="16 referees respect discipline fees £15 £20 £25">
+        <h3>16. Referees</h3>
+        <p>Without referees, teams would not be able to play any games. Coaches, players and supporters must treat them with respect at all times or else face disciplinary action.</p>
+        <h4>Referee match fees (paid by CVL)</h4>
+        <div class="fee-table">
+          <div class="fee-row"><div class="fee-age">U10</div><div class="fee-val">&pound;15.00</div><div></div></div>
+          <div class="fee-row"><div class="fee-age">U12</div><div class="fee-val">&pound;20.00</div><div></div></div>
+          <div class="fee-row"><div class="fee-age">U14</div><div class="fee-val">&pound;20.00</div><div></div></div>
+          <div class="fee-row"><div class="fee-age">U16</div><div class="fee-val">&pound;25.00</div><div></div></div>
+          <div class="fee-row"><div class="fee-age">U18</div><div class="fee-val">&pound;25.00</div><div></div></div>
+        </div>
+      </section>
+
+      <!-- ========= 17. TABLE OFFICIALS ========= -->
+      <section class="rule-block" id="table" data-search-keywords="17 table officials scorer timer scoresheet fee">
+        <h3>17. Table Officials</h3>
+        <ul>
+          <li>Each team must provide one table official capable of completing the scoresheet.</li>
+          <li>Teams must provide a competent table official at every game they play in. Failure to provide a competent table official will result in a fine (see Section 9 on Fines).</li>
+        </ul>
+        <h4>Table official payments (paid by CVL)</h4>
+        <div class="fee-table">
+          <div class="fee-row"><div class="fee-age">U10</div><div class="fee-val">&pound;8.00</div><div></div></div>
+          <div class="fee-row"><div class="fee-age">U12</div><div class="fee-val">&pound;10.00</div><div></div></div>
+          <div class="fee-row"><div class="fee-age">U14</div><div class="fee-val">&pound;10.00</div><div></div></div>
+          <div class="fee-row"><div class="fee-age">U16</div><div class="fee-val">&pound;12.00</div><div></div></div>
+          <div class="fee-row"><div class="fee-age">U18</div><div class="fee-val">&pound;12.00</div><div></div></div>
+        </div>
+      </section>
+
+      <!-- ========= 18. COMMISSIONERS ========= -->
+      <section class="rule-block" id="commissioners" data-search-keywords="18 commissioners setup equipment fees licence cards photography playhq observers">
+        <h3>18. Commissioners</h3>
+        <p>The Surrey Basketball Association will provide Commissioners at the CVL Junior League for the current season.</p>
+        <h4>The Commissioner will</h4>
+        <ul>
+          <li>Assist in setting up the courts and table equipment</li>
+          <li>Collect game fees from teams</li>
+          <li>Check licence cards and player eligibility</li>
+          <li>Oversee games and ensure officials are appointed and respected</li>
+          <li>Enforce SBA photography policy</li>
+          <li>Ensure all results are submitted on PlayHQ</li>
+          <li>Pay officials at the end of the session</li>
+          <li>Assist in putting away table equipment and tidying up</li>
+          <li>Provide the relevant CVL Co-Ordinator and SBA Treasurer with details of costings for the session</li>
+          <li>Report any incidents to the CVL sub-committee</li>
+        </ul>
+        <p>Observers may also be appointed to some CVL sessions.</p>
+      </section>
+
+      <!-- ========= 19. PLAYING RULES ========= -->
+      <section class="rule-block" id="playing" data-search-keywords="19 playing rules age specific">
+        <h2>Playing Rules &mdash; Age Specific</h2>
+      </section>
+
+      <!-- ========= U10 ========= -->
+      <section class="rule-block" id="u10" data-search-keywords="u10 u11 girls mixed size 5 basketball 5 minute quarters passerelle zone full court defence tied overtime possession arrow 4 fouls safeguarding welfare officer 2015 2014">
+        <h3>U10 Mixed &amp; U11 Girls Divisions</h3>
+        <ul>
+          <li><strong>Age:</strong> boys born on or after 01/09/2015, girls born on or after 01/09/2014.</li>
+          <li>Games to be played with a <strong>Size 5</strong> basketball.</li>
+          <li><strong>Timings:</strong> 5-minute quarters with stopping clock.</li>
+          <li><strong>Passerelle rules apply:</strong> 5 players play the entire first quarter. Then a different 5 players play the entire second quarter. Players can sub in and out in quarters 3 and 4.</li>
+          <li>A player who receives 3 personal fouls in Q1 or Q2 is allowed to be substituted. In this case, the <strong>opposition coach shall select the substitute</strong> to play. This rule also applies to injured players.</li>
+          <li>There will not be any points deducted for having less than 10 players.</li>
+          <li>If a team has less than 10 players, the opposing coach selects the player(s) to be substituted. (If the CVL Committee finds this system is being abused during the season, e.g. teams bringing 5 players, the ruling will be reconsidered.)</li>
+          <li>One free throw equals the relevant number of points (1, 2, or 3).</li>
+          <li>1-minute interval between quarters.</li>
+          <li>3 minutes at half time.</li>
+          <li>A team may take one 30-second time out in each quarter.</li>
+          <li><strong>Tied game:</strong> 1-minute overtime using possession arrow. Repeat if game is still tied after 1 minute.</li>
+          <li><strong>Fouls:</strong> 4 personal fouls only (foul out on 4th foul). Shooting on 4th team foul per quarter.</li>
+          <li><strong>Defence:</strong> Zone defence is <strong>not</strong> permitted.</li>
+          <li><strong>Full-court defence is not permitted.</strong></li>
+          <li>All players and coaches must be registered through PlayHQ before the first game their team plays in.</li>
+          <li>Licence cards must be made available to the Commissioner upon request at each game.</li>
+          <li>Any team subsequently found to have played an unlicensed player will be fined and the game awarded to the opposition.</li>
+          <li><strong>All teams must have a nominated Safeguarding / Welfare Officer.</strong></li>
+        </ul>
+      </section>
+
+      <!-- ========= U12 ========= -->
+      <section class="rule-block" id="u12" data-search-keywords="u12 u13 girls mixed size 5 basketball 7 minute quarters passerelle zone full court defence second half 20 points 2013 2012">
+        <h3>U12 Mixed &amp; U13 Girls Divisions</h3>
+        <ul>
+          <li><strong>Age:</strong> boys born on or after 01/09/2013, girls born on or after 01/09/2012.</li>
+          <li>Games to be played with a <strong>Size 5</strong> basketball.</li>
+          <li><strong>Timings:</strong> 7-minute quarters with stopping clock.</li>
+          <li><strong>Passerelle rules apply:</strong> 5 players play the entire first quarter. Then a different 5 players play the entire second quarter. Players can sub in and out in quarters 3 and 4.</li>
+          <li>A player who receives 3 personal fouls in Q1 or Q2 is allowed to be substituted. In this case, the opposition coach shall select the substitute to play. This rule also applies to injured players.</li>
+          <li>There will not be any points deducted for having less than 10 players.</li>
+          <li>If a team has less than 10 players, the opposing coach selects the player(s) to be substituted.</li>
+          <li>1-minute interval between quarters.</li>
+          <li>3 minutes at half time.</li>
+          <li>A team may take one 30-second time out in each quarter.</li>
+          <li><strong>Fouls:</strong> 4 personal fouls only (foul out on 4th foul). Shooting on 4th team foul per quarter.</li>
+          <li><strong>Tied game:</strong> 1-minute overtime using possession arrow. Repeat if game is still tied after 1 minute.</li>
+          <li><strong>Defence: zone defence is not permitted at this age group.</strong></li>
+          <li><strong>Full-court defence is allowed in the second half only,</strong> however it must be stopped if the team is 20 points or more ahead.</li>
+          <li>All players and coaches must be registered through PlayHQ before the first game their team plays in.</li>
+          <li>Licence cards must be made available to the Commissioner upon request at each game.</li>
+          <li>Any team subsequently found to have played an unlicensed player will be fined and the game awarded to the opposition.</li>
+          <li><strong>All teams must have a nominated Safeguarding / Welfare Officer.</strong></li>
+        </ul>
+      </section>
+
+      <!-- ========= U14 ========= -->
+      <section class="rule-block" id="u14" data-search-keywords="u14 mixed size 6 basketball 7 minute quarters national league year 9 boys passerelle zone full court defence 20 points 2011 2010">
+        <h3>U14 Mixed Divisions</h3>
+        <ul>
+          <li><strong>Age:</strong> boys born on or after 01/09/2011, girls born on or after 01/09/2010.</li>
+          <li>A <strong>maximum of two National League players in school year 9</strong> are allowed per team. This rule applies to <strong>boys only</strong>.</li>
+          <li>Games to be played with a <strong>Size 6</strong> basketball.</li>
+          <li><strong>Timings:</strong> 7-minute quarters with stopping clock.</li>
+          <li><strong>Passerelle rules apply:</strong> 5 players play the entire first quarter. Then a different 5 players play the entire second quarter. Players can sub in and out in quarters 3 and 4.</li>
+          <li>A player who receives 3 personal fouls in Q1 or Q2 is allowed to be substituted. In this case, the opposition coach shall select the substitute to play. This rule also applies to injured players.</li>
+          <li>There will not be any points deducted for having less than 10 players.</li>
+          <li>If a team has less than 10 players, the opposing coach selects the player(s) to be substituted.</li>
+          <li>1-minute interval between quarters.</li>
+          <li>3 minutes at half time.</li>
+          <li>A team may take one 30-second time out in each quarter.</li>
+          <li><strong>Tied game:</strong> 1-minute overtime using possession arrow. Repeat if game is still tied after 1 minute.</li>
+          <li><strong>Fouls:</strong> 4 personal fouls only (foul out on 4th foul). Shooting on 4th team foul per quarter.</li>
+          <li><strong>Zone defence is not permitted at this age group.</strong></li>
+          <li><strong>Full-court defence is allowed by either side</strong> &mdash; it <strong>must</strong> be taken off if a team is 20 points or more ahead.</li>
+          <li>All players and coaches must be registered through PlayHQ before the first game their team plays in.</li>
+          <li>Licence cards must be made available to the Commissioner upon request at each game.</li>
+          <li>Any team subsequently found to have played an unlicensed player will be fined and the game awarded to the opposition.</li>
+          <li><strong>All teams must have a nominated Safeguarding / Welfare Officer.</strong></li>
+        </ul>
+      </section>
+
+      <!-- ========= U16 ========= -->
+      <section class="rule-block" id="u16" data-search-keywords="u16 mixed size 7 basketball fiba rules national league year 11 boys zone defence q1 q3 2009 2008">
+        <h3>U16 Mixed Divisions</h3>
+        <ul>
+          <li><strong>Age:</strong> boys born on or after 01/09/2009, girls born on or after 01/09/2008.</li>
+          <li>A <strong>maximum of two National League players in school year 11</strong> are allowed per team. This rule applies to <strong>boys only</strong>.</li>
+          <li>Games are played as per the <strong>normal FIBA rules</strong>.</li>
+          <li>Games to be played with a <strong>Size 7</strong> basketball.</li>
+          <li><strong>Zone defence is only allowed in Quarters 1 &amp; 3.</strong></li>
+          <li>All players and coaches must be registered through PlayHQ before the first game their team plays in.</li>
+          <li>Licence cards must be made available to the Commissioner upon request at each game.</li>
+          <li>Any team subsequently found to have played an unlicensed player will be fined and the game awarded to the opposition.</li>
+          <li><strong>All teams must have a nominated Safeguarding / Welfare Officer.</strong></li>
+        </ul>
+      </section>
+
+      <!-- ========= U18 ========= -->
+      <section class="rule-block" id="u18" data-search-keywords="u18 mixed size 7 basketball fiba rules national league year 13 boys zone defence q1 q3 2007 2006">
+        <h3>U18 Mixed Divisions</h3>
+        <ul>
+          <li><strong>Age:</strong> boys born on or after 01/09/2007, girls born on or after 01/09/2006.</li>
+          <li>A <strong>maximum of two National League players in school year 13</strong> are allowed per team. This rule applies to <strong>boys only</strong>.</li>
+          <li>Games are played as per the <strong>normal FIBA rules</strong>.</li>
+          <li>Games to be played with a <strong>Size 7</strong> basketball.</li>
+          <li><strong>Zone defence is only allowed in Quarters 1 &amp; 3.</strong></li>
+          <li>All players and coaches must be registered through PlayHQ before the first game their team plays in.</li>
+          <li>Licence cards must be made available to the Commissioner upon request at each game.</li>
+          <li>Any team subsequently found to have played an unlicensed player will be fined and the game awarded to the opposition.</li>
+          <li><strong>All teams must have a nominated Safeguarding / Welfare Officer.</strong></li>
+        </ul>
+      </section>
+
+      <!-- ========= CONDUCT ========= -->
+      <section class="rule-block" id="conduct" data-search-keywords="codes of conduct sportsmanship handshake referees table officials supporters obscenities abuse">
+        <h2>Codes of Conduct</h2>
+        <p>Basic standards of sportspersonship, such as players shaking hands and thanking referees and table officials, are expected from all teams in the Surrey League as a matter of common courtesy. Clubs are also responsible for the conduct of their officials and supporters, who should likewise behave in a respectful manner.</p>
+        <p>Supporters must <strong>not</strong> shout obscenities to, boo or distract players from the opposite team. Failure to observe these requirements may result in disciplinary action being taken against the club and fines imposed.</p>
+        <p>Those involved in the Surrey League, in whatever capacity, must respect the rights, dignity and worth of every person &mdash; player and non-player alike &mdash; and treat everyone equally within the context of the game. In particular, those involved in the league are expected to be aware of the special needs of young people and vulnerable adults, including their well-being and potential difficulties or possible abuse.</p>
+        <p>Club contacts and secretaries <strong>must</strong> make their players and spectators aware of the Codes of Conduct and ensure they are explained at the start of the season.</p>
+        <p>The Surrey Basketball Association is committed to achieving and maintaining the highest possible standards of behaviour and conduct at basketball games and events. Any concerns regarding the breach of the Codes of Conduct should be presented to the SBA Executive Committee as soon as possible after a game.</p>
+      </section>
+
+      <!-- ========= SAFEGUARDING FULL ========= -->
+      <section class="rule-block" id="safeguarding-full" data-search-keywords="safeguarding basketball england policy welfare officer dbs safeguarding qualification nspcc childline 999">
+        <h2>Safeguarding</h2>
+        <p>Please refer to the <a href="https://www.basketballengland.co.uk/safeguarding" target="_blank" rel="noopener">Basketball England Safeguarding Policy</a> for information on guidance and good practice.</p>
+
+        <h4>Each club within the Surrey League must</h4>
+        <ul>
+          <li>Have safe-recruitment guidance for all roles within the club</li>
+          <li>Ensure &ldquo;bench personnel&rdquo; (coaches, team managers, table officers, game day support staff, etc.) are DBS checked</li>
+          <li>Have a nominated <strong>Welfare Officer</strong> who is DBS checked, trained in Safeguarding, and aware of Basketball England&rsquo;s Safeguarding Policy</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>If a child is in urgent danger, call the Police on 999 or the NSPCC on 0808 800 5000.</strong></p>
+          <p>If you are 18 or under and need confidential advice or support, please contact <strong>Childline on 0800 1111</strong>.</p>
+          <p>Report a matter directly to <a href="https://www.basketballengland.co.uk/safeguarding/report-it" target="_blank" rel="noopener">Basketball England</a>.</p>
+        </div>
+
+        <h4>Local Safeguarding Children Boards</h4>
+        <ul>
+          <li>Surrey Safeguarding Children Partnership</li>
+          <li>London Safeguarding Children Partnership</li>
+          <li>Berkshire West Safeguarding Children Partnership</li>
+          <li>Kent Safeguarding Children Multi-Agency Partnership</li>
+        </ul>
+        <p>For any other queries, email <a href="mailto:safeguarding@basketballengland.co.uk">safeguarding@basketballengland.co.uk</a>.</p>
+      </section>
+
+      <!-- ========= TOURNAMENTS ========= -->
+      <section class="rule-block" id="tournaments" data-search-keywords="tournaments events agm annual general meeting newsletters">
+        <h2>Tournaments &amp; Events</h2>
+        <p>The SBA is proud of its involvement in basketball throughout the county, and is always happy and willing to promote events organised by Surrey teams to encourage participation in the sport. For more information, please contact anyone on the Committee who will be happy to help.</p>
+        <p>Newsletters may be produced to keep all those involved in the Surrey League up to date with rule changes, courses for table officials and referees, and any guest speakers that are invited to talk on topical matters.</p>
+        <p>The <strong>Annual General Meeting</strong> is held during the summer off-season &mdash; all clubs must send a representative to this meeting or else suffer a fine.</p>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div>
+      <h5>Surrey Basketball Association</h5>
+      <p>Governing junior and senior basketball across the county of Surrey, affiliated to Basketball England.</p>
+    </div>
+    <div>
+      <h5>Quick links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="handbook.html">Junior CVL handbook</a></li>
+        <li><a href="SBA_Senior_Handbook_202526.pdf" target="_blank" rel="noopener">Senior handbook (PDF)</a></li>
+        <li><a href="officiate.html">Officiate</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>External</h5>
+      <ul>
+        <li><a href="https://www.playhq.com/uk/basketball-england/org/surrey-basketball-association/214804d8" target="_blank" rel="noopener">PlayHQ (fixtures &amp; results)</a></li>
+        <li><a href="https://www.basketballengland.co.uk" target="_blank" rel="noopener">Basketball England</a></li>
+      </ul>
+    </div>
+
+    <div class="affiliations">
+      <span class="affiliations-label">Affiliated to</span>
+      <div class="affiliations-logos">
+        <a href="https://www.basketballengland.co.uk" target="_blank" rel="noopener" aria-label="Basketball England">
+          <img src="BE_logo.png" alt="Basketball England">
+        </a>
+        <a href="https://www.basketballengland.co.uk/play/nbl/" target="_blank" rel="noopener" aria-label="National Basketball League">
+          <img src="nbl_logo.png" alt="National Basketball League">
+        </a>
+        <a href="https://www.basketballengland.co.uk/play/junior-nbl/" target="_blank" rel="noopener" aria-label="Junior National Basketball League">
+          <img src="jnr_nbl_logo.png" alt="Junior National Basketball League">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    &copy; Surrey Basketball Association &middot; Junior CVL Handbook 2025&ndash;26
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // ============ SEARCH ============
+  var searchInput = document.getElementById('hb-search');
+  var clearBtn = document.getElementById('hb-clear');
+  var clearLink = document.getElementById('search-clear-link');
+  var status = document.getElementById('hb-status');
+  var empty = document.getElementById('search-empty');
+  var blocks = document.querySelectorAll('.rule-block');
+  var toc = document.getElementById('hb-toc');
+
+  // Build a simple search index once.
+  // Each entry: { el, text (lowercased), id, keywords (data-search-keywords) }
+  var index = [];
+  blocks.forEach(function(block) {
+    // Store original HTML so we can restore after highlighting
+    block.dataset.originalHtml = block.innerHTML;
+    var text = block.textContent.toLowerCase();
+    var keywords = (block.dataset.searchKeywords || '').toLowerCase();
+    index.push({
+      el: block,
+      text: text + ' ' + keywords,
+      id: block.id
+    });
+  });
+
+  function escapeRegex(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  // Walk DOM text nodes and wrap matches in <mark>. Avoid touching script/style/mark.
+  function highlightIn(node, regex) {
+    if (node.nodeType === 3) {
+      var txt = node.nodeValue;
+      if (!regex.test(txt)) return;
+      regex.lastIndex = 0;
+      var frag = document.createDocumentFragment();
+      var lastIdx = 0, m;
+      while ((m = regex.exec(txt)) !== null) {
+        if (m.index > lastIdx) {
+          frag.appendChild(document.createTextNode(txt.slice(lastIdx, m.index)));
+        }
+        var mark = document.createElement('mark');
+        mark.textContent = m[0];
+        frag.appendChild(mark);
+        lastIdx = m.index + m[0].length;
+        if (m[0].length === 0) { regex.lastIndex++; }
+      }
+      if (lastIdx < txt.length) {
+        frag.appendChild(document.createTextNode(txt.slice(lastIdx)));
+      }
+      node.parentNode.replaceChild(frag, node);
+    } else if (node.nodeType === 1 && node.childNodes && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE' && node.nodeName !== 'MARK') {
+      // copy children to array because we may be mutating
+      var kids = Array.prototype.slice.call(node.childNodes);
+      for (var i = 0; i < kids.length; i++) {
+        highlightIn(kids[i], regex);
+      }
+    }
+  }
+
+  function clearHighlights() {
+    blocks.forEach(function(block) {
+      if (block.dataset.originalHtml) {
+        block.innerHTML = block.dataset.originalHtml;
+      }
+    });
+  }
+
+  function runSearch(query) {
+    var q = query.trim().toLowerCase();
+
+    if (!q) {
+      document.body.classList.remove('searching');
+      clearHighlights();
+      blocks.forEach(function(b) { b.removeAttribute('data-hidden'); });
+      status.textContent = '';
+      empty.style.display = 'none';
+      return;
+    }
+
+    document.body.classList.add('searching');
+    clearHighlights();
+
+    // Split query into words (AND match — all words must be present)
+    var words = q.split(/\s+/).filter(Boolean);
+
+    var matchCount = 0;
+    index.forEach(function(entry) {
+      var allMatch = words.every(function(w) { return entry.text.indexOf(w) !== -1; });
+      if (allMatch) {
+        entry.el.removeAttribute('data-hidden');
+        matchCount++;
+      } else {
+        entry.el.setAttribute('data-hidden', 'true');
+      }
+    });
+
+    // Highlight the longest word across visible blocks (keeps UI fast for multi-word queries)
+    if (matchCount > 0 && words.length) {
+      var longestWord = words.reduce(function(a, b) { return b.length > a.length ? b : a; });
+      if (longestWord.length >= 2) {
+        var re = new RegExp('(' + escapeRegex(longestWord) + ')', 'gi');
+        blocks.forEach(function(block) {
+          if (!block.hasAttribute('data-hidden')) {
+            highlightIn(block, re);
+          }
+        });
+      }
+    }
+
+    if (matchCount === 0) {
+      empty.style.display = 'block';
+      status.innerHTML = '<strong>No matches</strong> for &ldquo;' + escapeHtml(q) + '&rdquo;';
+    } else {
+      empty.style.display = 'none';
+      status.innerHTML = '<strong>' + matchCount + '</strong> section' + (matchCount !== 1 ? 's' : '') + ' match&nbsp;&ldquo;' + escapeHtml(q) + '&rdquo;';
+    }
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  // Debounce to keep typing responsive
+  var debounceTimer;
+  searchInput.addEventListener('input', function() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(function() {
+      runSearch(searchInput.value);
+    }, 120);
+  });
+
+  clearBtn.addEventListener('click', function() {
+    searchInput.value = '';
+    runSearch('');
+    searchInput.focus();
+  });
+
+  if (clearLink) {
+    clearLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      searchInput.value = '';
+      runSearch('');
+      searchInput.focus();
+    });
+  }
+
+  // Escape key clears search
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      searchInput.value = '';
+      runSearch('');
+    }
+  });
+
+  // ============ TOC ACTIVE HIGHLIGHTING ON SCROLL ============
+  var tocLinks = toc.querySelectorAll('a');
+  var tocMap = {};
+  tocLinks.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    tocMap[id] = a;
+  });
+
+  function updateActiveToc() {
+    if (document.body.classList.contains('searching')) return;
+    var scrollY = window.scrollY;
+    var viewportOffset = 120;
+    var currentId = null;
+    blocks.forEach(function(block) {
+      var rect = block.getBoundingClientRect();
+      var top = rect.top + scrollY;
+      if (top <= scrollY + viewportOffset) {
+        currentId = block.id;
+      }
+    });
+    tocLinks.forEach(function(a) { a.classList.remove('toc-active'); });
+    if (currentId && tocMap[currentId]) {
+      tocMap[currentId].classList.add('toc-active');
+      // Ensure the active TOC item is visible within the sidebar on desktop
+      var sidebar = document.querySelector('.handbook-sidebar');
+      if (sidebar && window.innerWidth > 900) {
+        var linkRect = tocMap[currentId].getBoundingClientRect();
+        var sbRect = sidebar.getBoundingClientRect();
+        if (linkRect.top < sbRect.top + 20 || linkRect.bottom > sbRect.bottom - 20) {
+          tocMap[currentId].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      }
+    }
+  }
+
+  var scrollTimer;
+  window.addEventListener('scroll', function() {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(updateActiveToc, 50);
+  }, { passive: true });
+
+  // Initial set
+  updateActiveToc();
+
+  // ============ DEEP-LINK HANDLING ============
+  // If the URL already has a #hash, scroll to it after search init completes
+  if (location.hash) {
+    var target = document.querySelector(location.hash);
+    if (target) {
+      setTimeout(function() {
+        target.scrollIntoView({ behavior: 'instant' });
+      }, 50);
+    }
+  }
+
+  // Keyboard shortcut: / focuses search
+  document.addEventListener('keydown', function(e) {
+    if (e.key === '/' && document.activeElement !== searchInput && !e.metaKey && !e.ctrlKey) {
+      var tag = document.activeElement.tagName;
+      if (tag !== 'INPUT' && tag !== 'TEXTAREA') {
+        e.preventDefault();
+        searchInput.focus();
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
