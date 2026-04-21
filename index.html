@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Surrey Basketball Association</title>
-<meta name="description" content="Surrey Basketball Association — governing junior and senior basketball across the county of Surrey. Central Venue Leagues for U10 through U18, senior men's and women's leagues, and county squads.">
+<meta name="description" content="Surrey Basketball Association — governing junior and senior basketball across the county of Surrey. Central Venue Leagues for U10 through U18 plus senior men's and women's leagues.">
 
 <style>
   :root {
@@ -345,8 +345,8 @@
   /* ================= TILE GRID (who are you) ================= */
   .tiles {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
   }
   .tile {
     background: #fff;
@@ -720,18 +720,18 @@
   .footer-about p { margin-top: 10px; }
   .footer-social { display: flex; gap: 10px; margin-top: 14px; }
   .footer-social a {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: rgba(255,255,255,0.08);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
-    font-weight: 700;
+    color: rgba(250, 246, 236, 0.85);
     transition: background 0.2s, color 0.2s;
   }
   .footer-social a:hover { background: var(--sba-gold); color: var(--ink); }
+  .footer-social svg { width: 16px; height: 16px; display: block; }
 
   /* Affiliations strip */
   .affiliations {
@@ -831,6 +831,7 @@
     </a>
     <nav class="header-links">
       <a href="index.html" class="current">Home</a>
+      <a href="clubs.html">Clubs</a>
       <a href="https://fimartin.my.canva.site/surreycvlplayoffs2025-26/" target="_blank" rel="noopener">Playoffs</a>
       <a href="handbook.html">Handbook</a>
       <a href="officiate.html">Officiate</a>
@@ -885,8 +886,8 @@
         <div class="stat-label">Senior men's and women's leagues</div>
       </div>
       <div class="stat">
-        <div class="stat-value">County</div>
-        <div class="stat-label">Boys and girls squads</div>
+        <div class="stat-value">33</div>
+        <div class="stat-label">Clubs competing this season</div>
       </div>
     </div>
   </div>
@@ -900,6 +901,13 @@
     <p class="lead">The fastest way into whatever you came for. If you're new to Surrey Basketball, start with the handbook.</p>
 
     <div class="tiles">
+      <a class="tile" href="clubs.html">
+        <div class="tile-label">For players &amp; parents</div>
+        <h3>Clubs in the league</h3>
+        <p>33 clubs competing this season across our junior and senior leagues. Find your local club to join.</p>
+        <span class="tile-cta">See all clubs &rarr;</span>
+      </a>
+
       <a class="tile" href="handbook.html">
         <div class="tile-label">Rules &amp; regulations</div>
         <h3>The CVL Handbook</h3>
@@ -963,8 +971,8 @@
             <div class="age-chip-sub">Mixed</div>
           </div>
           <div class="age-chip">
-            <div class="age-chip-num">County</div>
-            <div class="age-chip-sub">Squads</div>
+            <div class="age-chip-num">Girls</div>
+            <div class="age-chip-sub">U10 &amp; U12</div>
           </div>
           <div class="age-chip adult">
             <div class="age-chip-num">Senior</div>
@@ -1085,14 +1093,21 @@
       <h5>Surrey Basketball Association</h5>
       <p>Governing junior and senior basketball across the county of Surrey, affiliated to Basketball England. A voluntary association run by volunteers, for the benefit of everyone who plays, coaches, officiates or supports the game in the county.</p>
       <div class="footer-social">
-        <a href="https://www.facebook.com/surreybasketball/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-        <a href="https://www.instagram.com/surreybasketballassociation/" target="_blank" rel="noopener" aria-label="Instagram">Ig</a>
-        <a href="https://twitter.com/SurreyBasketbal" target="_blank" rel="noopener" aria-label="Twitter">X</a>
+        <a href="https://www.facebook.com/surreybasketball/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/surreybasketballassociation/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://twitter.com/SurreyBasketbal" target="_blank" rel="noopener" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
       </div>
     </div>
     <div>
       <h5>The league</h5>
       <ul>
+        <li><a href="clubs.html">Clubs in the league</a></li>
         <li><a href="handbook.html">Junior CVL handbook</a></li>
         <li><a href="SBA_Senior_Handbook_202526.pdf" target="_blank" rel="noopener">Senior handbook (PDF)</a></li>
         <li><a href="handbook.html#playing">Age-group rules</a></li>
