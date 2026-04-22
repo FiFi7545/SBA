@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Champions &mdash; Surrey Basketball Association</title>
+<meta name="description" content="Finals day champions and league winners from every Surrey Basketball Association season.">
+
+<style>
+  :root {
+    --sba-red: #B8241C;
+    --sba-red-dark: #8A1712;
+    --sba-gold: #D4A93A;
+    --sba-gold-soft: #E8C667;
+    --sba-gold-dark: #A68420;
+    --cream: #FAF6EC;
+    --ink: #1A1613;
+    --ink-soft: #3E3731;
+    --muted: #6B5F55;
+    --line: #E4DCC8;
+    --hover: #F3EAD3;
+    --serif: Georgia, "Iowan Old Style", Charter, Cambria, Times, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  a { color: var(--sba-red); }
+
+  header.site-header {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .brand-logo {
+    width: auto;
+    height: 44px;
+    flex-shrink: 0;
+    display: block;
+  }
+  .brand-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .brand-sub {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .header-links {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 14px;
+  }
+  .header-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+  }
+  .header-links a:hover { background: var(--hover); color: var(--ink); }
+  .header-links a.current {
+    background: var(--sba-red);
+    color: #fff;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top right, rgba(212, 169, 58, 0.22), transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(184, 36, 28, 0.08), transparent 55%),
+      var(--cream);
+    padding: 56px 0 64px;
+    border-bottom: 1px solid var(--line);
+  }
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .kicker {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sba-red);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(36px, 5.5vw, 62px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  h1 em { font-style: italic; color: var(--sba-red); font-weight: 600; }
+  .hero .lead {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 560px;
+    margin-bottom: 20px;
+  }
+
+  .trophy-viz {
+    position: relative;
+    aspect-ratio: 1;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .trophy { position: absolute; inset: 15%; }
+  .trophy-cup {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 48%;
+    background: linear-gradient(180deg, var(--sba-gold) 0%, var(--sba-gold-dark) 100%);
+    border-radius: 12px 12px 40% 40%;
+    box-shadow: 0 12px 40px rgba(166, 132, 32, 0.4), inset -8px -12px 20px rgba(0,0,0,0.15), inset 8px 4px 20px rgba(255, 240, 180, 0.3);
+  }
+  .trophy-cup::before, .trophy-cup::after {
+    content: '';
+    position: absolute;
+    top: 18%;
+    width: 22%;
+    height: 50%;
+    border: 6px solid var(--sba-gold-dark);
+    border-radius: 50%;
+  }
+  .trophy-cup::before { left: -18%; border-right: none; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+  .trophy-cup::after { right: -18%; border-left: none; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+  .trophy-cup-star {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    text-align: center;
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: 2.5vw;
+    color: var(--sba-red);
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+  .trophy-stem {
+    position: absolute;
+    top: 48%;
+    left: 44%;
+    right: 44%;
+    height: 10%;
+    background: linear-gradient(180deg, var(--sba-gold-dark), var(--sba-gold));
+  }
+  .trophy-base {
+    position: absolute;
+    top: 58%;
+    left: 25%;
+    right: 25%;
+    height: 8%;
+    background: linear-gradient(180deg, var(--sba-gold) 0%, var(--sba-gold-dark) 100%);
+    border-radius: 6px;
+  }
+  .trophy-plinth {
+    position: absolute;
+    top: 66%;
+    left: 15%;
+    right: 15%;
+    height: 14%;
+    background: var(--ink);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sba-gold);
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: clamp(14px, 2vw, 22px);
+    letter-spacing: 0.1em;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  }
+  .trophy-laurel-left, .trophy-laurel-right {
+    position: absolute;
+    top: 60%;
+    width: 12%;
+    height: 12%;
+    background: var(--sba-gold);
+    border-radius: 100% 0;
+    opacity: 0.85;
+  }
+  .trophy-laurel-left { left: 10%; transform: rotate(-30deg); }
+  .trophy-laurel-right { right: 10%; transform: rotate(30deg) scaleX(-1); }
+
+  .section-wrap {
+    padding: 56px 0 80px;
+  }
+  h2.section-heading {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  h2.section-heading em { font-style: italic; color: var(--sba-red); font-weight: 600; }
+  .section-lead {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin-bottom: 32px;
+  }
+
+  .placeholder-banner {
+    background: #fff;
+    border: 2px dashed var(--sba-gold);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .placeholder-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--sba-gold);
+    color: var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .placeholder-text h4 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .placeholder-text p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0;
+    line-height: 1.5;
+  }
+  .placeholder-text a { font-weight: 600; color: var(--sba-red); text-decoration: none; }
+  .placeholder-text a:hover { text-decoration: underline; }
+
+  .year-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .year-tab {
+    background: #fff;
+    border: 1.5px solid var(--line);
+    padding: 10px 18px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .year-tab:hover { border-color: var(--ink); color: var(--ink); }
+  .year-tab.active {
+    background: var(--sba-red);
+    border-color: var(--sba-red);
+    color: #fff;
+  }
+  .year-tab.current {
+    border-color: var(--sba-gold);
+    color: var(--sba-gold-dark);
+    position: relative;
+  }
+  .year-tab.current::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--sba-gold);
+    box-shadow: 0 0 0 3px var(--cream);
+  }
+  .year-tab.active.current { color: #fff; border-color: var(--sba-red); }
+
+  .table-wrap {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  table.champions-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  .champions-table thead th {
+    background: var(--hover);
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  .champions-table thead th.col-season { width: 110px; }
+  .champions-table thead th.col-division { width: 220px; }
+  .champions-table tbody tr {
+    border-bottom: 1px solid var(--line);
+    transition: background 0.1s;
+  }
+  .champions-table tbody tr:last-child { border-bottom: none; }
+  .champions-table tbody tr:hover { background: var(--cream); }
+  .champions-table tbody tr[data-hidden="true"] { display: none; }
+  .champions-table td {
+    padding: 14px 18px;
+    vertical-align: middle;
+  }
+  .champions-table td.season-cell {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--ink);
+    border-left: 4px solid var(--sba-gold);
+    background: #FDFBF3;
+    vertical-align: top;
+    padding-top: 18px;
+  }
+  .champions-table td.division-cell {
+    font-family: var(--serif);
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 16px;
+  }
+  .champions-table td.division-cell .div-badge {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 100px;
+    background: rgba(184, 36, 28, 0.08);
+    color: var(--sba-red);
+    vertical-align: middle;
+    font-family: var(--sans);
+  }
+  .champions-table td.division-cell .div-badge.girls {
+    background: #fff;
+    border: 1px solid var(--sba-gold);
+    color: var(--sba-red);
+  }
+  .winner-name {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .winner-placeholder {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 14px;
+  }
+  .winner-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sba-gold-dark);
+  }
+  .winner-live::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--sba-gold);
+    box-shadow: 0 0 0 3px rgba(212, 169, 58, 0.25);
+  }
+  .current-row td.season-cell {
+    background: #FFF8E6;
+  }
+  .current-row td {
+    background: #FFFBF0;
+  }
+
+  /* Mobile: stacked card layout per row */
+  @media (max-width: 700px) {
+    .champions-table thead { display: none; }
+    .champions-table, .champions-table tbody, .champions-table tr, .champions-table td {
+      display: block;
+      width: 100%;
+    }
+    .champions-table tbody tr {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .current-row td { background: transparent; }
+    .champions-table tbody tr.current-row {
+      background: #FFFBF0;
+    }
+    .champions-table td {
+      padding: 4px 0;
+      border: none;
+    }
+    .champions-table td.season-cell {
+      background: transparent;
+      border-left: none;
+      padding: 0 0 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sba-red);
+      font-family: var(--sans);
+    }
+    .champions-table td.division-cell { font-size: 17px; margin-bottom: 4px; }
+    .champions-table td[data-label]::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+    .champions-table td.division-cell::before,
+    .champions-table td.season-cell::before { display: none; }
+  }
+
+  .playoffs-cta {
+    background: linear-gradient(135deg, var(--ink) 0%, #2a231d 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+  .playoffs-cta::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(212, 169, 58, 0.2), transparent 60%);
+    pointer-events: none;
+  }
+  .playoffs-cta-text {
+    flex: 1;
+    min-width: 260px;
+    position: relative;
+    z-index: 2;
+  }
+  .playoffs-cta-text .kicker { color: var(--sba-gold); }
+  .playoffs-cta-text h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .playoffs-cta-text h3 em { color: var(--sba-gold); font-style: italic; }
+  .playoffs-cta-text p {
+    color: rgba(255,255,255,0.75);
+    font-size: 14px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 22px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+  .btn-gold {
+    background: var(--sba-gold);
+    color: var(--ink);
+    box-shadow: 0 4px 0 var(--sba-gold-dark);
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--sba-gold-dark); }
+
+  footer {
+    background: var(--ink);
+    color: rgba(250, 246, 236, 0.75);
+    padding: 48px 0 28px;
+  }
+  footer .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  footer h5 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sba-gold);
+    margin-bottom: 14px;
+  }
+  footer p, footer li {
+    color: rgba(250, 246, 236, 0.65);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  footer ul { list-style: none; padding: 0; }
+  footer ul li { margin-bottom: 8px; }
+  footer a {
+    color: rgba(250, 246, 236, 0.75);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  footer a:hover { color: var(--sba-gold); }
+  .footer-about p { margin-top: 10px; }
+  .footer-social { display: flex; gap: 10px; margin-top: 16px; }
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(250, 246, 236, 0.85);
+    transition: background 0.2s, color 0.2s;
+  }
+  .footer-social a:hover { background: var(--sba-gold); color: var(--ink); }
+  .footer-social svg { width: 16px; height: 16px; display: block; }
+  .affiliations {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(250, 246, 236, 0.1);
+    margin-top: 32px;
+    padding-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .affiliations-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250, 246, 236, 0.5);
+    flex-shrink: 0;
+  }
+  .affiliations-logos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .affiliations-logos a {
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 100px;
+    padding: 6px 10px;
+    transition: transform 0.2s;
+  }
+  .affiliations-logos a:hover { transform: translateY(-2px); }
+  .affiliations-logos img { height: 30px; width: auto; display: block; }
+  .footer-bottom {
+    border-top: 1px solid rgba(250, 246, 236, 0.1);
+    margin-top: 28px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(250, 246, 236, 0.5);
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .trophy-viz { max-width: 220px; }
+    footer .container { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .header-inner { padding: 12px 16px; gap: 12px; }
+    .brand-sub { display: none; }
+    .header-links { gap: 2px; overflow-x: auto; scrollbar-width: none; }
+    .header-links::-webkit-scrollbar { display: none; }
+    .header-links a { padding: 6px 10px; font-size: 13px; white-space: nowrap; }
+    .playoffs-cta { padding: 24px; }
+    footer .container { grid-template-columns: 1fr; gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="surrey_logo.webp" alt="Surrey Basketball Association crest">
+      <div>
+        <div class="brand-name">Surrey Basketball</div>
+        <div class="brand-sub">Association</div>
+      </div>
+    </a>
+    <nav class="header-links">
+      <a href="index.html">Home</a>
+      <a href="clubs.html">Clubs</a>
+      <a href="champions.html" class="current">Champions</a>
+      <a href="https://fimartin.my.canva.site/surreycvlplayoffs2025-26/" target="_blank" rel="noopener">Playoffs</a>
+      <a href="handbook.html">Handbook</a>
+      <a href="officiate.html">Officiate</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="kicker">Finals day &amp; league winners</span>
+        <h1>Surrey&rsquo;s <em>champions</em>.</h1>
+        <p class="lead">A record of every team that&rsquo;s topped the league table or lifted the finals day trophy across the Surrey Central Venue Leagues.</p>
+      </div>
+      <div>
+        <div class="trophy-viz" aria-hidden="true">
+          <div class="trophy">
+            <div class="trophy-cup"><div class="trophy-cup-star">SBA</div></div>
+            <div class="trophy-laurel-left"></div>
+            <div class="trophy-laurel-right"></div>
+            <div class="trophy-stem"></div>
+            <div class="trophy-base"></div>
+            <div class="trophy-plinth">CHAMPIONS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE -->
+<section class="section-wrap">
+  <div class="container">
+
+    <span class="kicker">Junior CVL winners</span>
+    <h2 class="section-heading">The record <em>book</em>.</h2>
+    <p class="section-lead">Central Venue League winners and finals day champions across every junior division, by season. The league winner tops the regular-season table; the playoff champion wins finals day at ACS Cobham.</p>
+
+    <div class="placeholder-banner">
+      <div class="placeholder-icon" aria-hidden="true">!</div>
+      <div class="placeholder-text">
+        <h4>Historical winners need your input</h4>
+        <p>Cells marked &ldquo;to be added&rdquo; are placeholders. Seasons before 2024&ndash;25 are shown with the same division structure as 2024&ndash;25 &mdash; if any of those seasons had different competitions (or didn&rsquo;t include a particular age group), please let us know. <a href="mailto:fimartin.basketball@gmail.com?subject=Champions%20page%20%E2%80%94%20historical%20winners">Email us</a> any corrections or winners you remember.</p>
+      </div>
+    </div>
+
+    <div class="year-tabs" id="year-tabs">
+      <button class="year-tab active" data-year="all">All seasons</button>
+      <button class="year-tab current" data-year="2025-26">2025&ndash;26</button>
+      <button class="year-tab" data-year="2024-25">2024&ndash;25</button>
+      <button class="year-tab" data-year="2023-24">2023&ndash;24</button>
+      <button class="year-tab" data-year="2022-23">2022&ndash;23</button>
+      <button class="year-tab" data-year="2021-22">2021&ndash;22</button>
+    </div>
+
+    <div class="table-wrap">
+      <table class="champions-table">
+        <thead>
+          <tr>
+            <th class="col-season">Season</th>
+            <th class="col-division">Division</th>
+            <th>League winner</th>
+            <th>Playoff champion</th>
+          </tr>
+        </thead>
+        <tbody id="champions-tbody">
+
+          <tr class="current-row" data-year="2025-26">
+            <td class="season-cell" rowspan="7">2025&ndash;26</td>
+            <td class="division-cell">U10 Mixed</td>
+            <td data-label="League winner"><span class="winner-name">Kingston Lions</span></td>
+            <td data-label="Playoff champion"><span class="winner-live">Finals day 10 May</span></td>
+          </tr>
+          <tr class="current-row" data-year="2025-26">
+            <td class="division-cell">U10 Girls <span class="div-badge girls">Girls</span></td>
+            <td data-label="League winner"><span class="winner-name">Kingston Lions</span></td>
+            <td data-label="Playoff champion"><span class="winner-live">Finals day 10 May</span></td>
+          </tr>
+          <tr class="current-row" data-year="2025-26">
+            <td class="division-cell">U12 Mixed</td>
+            <td data-label="League winner"><span class="winner-name">Kingston Wildcats</span></td>
+            <td data-label="Playoff champion"><span class="winner-live">Finals day 10 May</span></td>
+          </tr>
+          <tr class="current-row" data-year="2025-26">
+            <td class="division-cell">U12 Girls <span class="div-badge girls">Girls</span></td>
+            <td data-label="League winner"><span class="winner-name">Kingston Lions</span></td>
+            <td data-label="Playoff champion"><span class="winner-live">Finals day 10 May</span></td>
+          </tr>
+          <tr class="current-row" data-year="2025-26">
+            <td class="division-cell">U14 Mixed</td>
+            <td data-label="League winner"><span class="winner-name">Kingston Spartans</span></td>
+            <td data-label="Playoff champion"><span class="winner-live">Finals day 10 May</span></td>
+          </tr>
+          <tr class="current-row" data-year="2025-26">
+            <td class="division-cell">U16 Mixed</td>
+            <td data-label="League winner"><span class="winner-name">Woking Blackhawks</span></td>
+            <td data-label="Playoff champion"><span class="winner-live">Finals day 10 May</span></td>
+          </tr>
+          <tr class="current-row" data-year="2025-26">
+            <td class="division-cell">U18 Mixed</td>
+            <td data-label="League winner"><span class="winner-name">Woking Blackhawks</span></td>
+            <td data-label="Playoff champion"><span class="winner-live">Finals day 10 May</span></td>
+          </tr>
+
+          <tr data-year="2024-25">
+            <td class="season-cell" rowspan="5">2024&ndash;25</td>
+            <td class="division-cell">U10 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2024-25">
+            <td class="division-cell">U12 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2024-25">
+            <td class="division-cell">U14 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2024-25">
+            <td class="division-cell">U16 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2024-25">
+            <td class="division-cell">U18 Men <span class="div-badge">Men</span></td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+
+          <tr data-year="2023-24">
+            <td class="season-cell" rowspan="5">2023&ndash;24</td>
+            <td class="division-cell">U10 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2023-24">
+            <td class="division-cell">U12 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2023-24">
+            <td class="division-cell">U14 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2023-24">
+            <td class="division-cell">U16 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2023-24">
+            <td class="division-cell">U18 Men <span class="div-badge">Men</span></td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+
+          <tr data-year="2022-23">
+            <td class="season-cell" rowspan="5">2022&ndash;23</td>
+            <td class="division-cell">U10 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2022-23">
+            <td class="division-cell">U12 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2022-23">
+            <td class="division-cell">U14 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2022-23">
+            <td class="division-cell">U16 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2022-23">
+            <td class="division-cell">U18 Men <span class="div-badge">Men</span></td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+
+          <tr data-year="2021-22">
+            <td class="season-cell" rowspan="5">2021&ndash;22</td>
+            <td class="division-cell">U10 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2021-22">
+            <td class="division-cell">U12 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2021-22">
+            <td class="division-cell">U14 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2021-22">
+            <td class="division-cell">U16 Mixed</td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+          <tr data-year="2021-22">
+            <td class="division-cell">U18 Men <span class="div-badge">Men</span></td>
+            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="playoffs-cta">
+      <div class="playoffs-cta-text">
+        <span class="kicker">Right now</span>
+        <h3>2025&ndash;26 <em>playoffs are live</em>.</h3>
+        <p>Finals day is Sunday 10 May 2026 at ACS International School Cobham. Brackets, seedings and key dates on the Canva site.</p>
+      </div>
+      <a href="https://fimartin.my.canva.site/surreycvlplayoffs2025-26/" target="_blank" rel="noopener" class="btn btn-gold">View the brackets &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-about">
+      <h5>Surrey Basketball Association</h5>
+      <p>Governing junior and senior basketball across the county of Surrey, affiliated to Basketball England.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/surreybasketball/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/surreybasketballassociation/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://twitter.com/SurreyBasketbal" target="_blank" rel="noopener" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h5>The league</h5>
+      <ul>
+        <li><a href="clubs.html">Clubs</a></li>
+        <li><a href="champions.html">Champions</a></li>
+        <li><a href="handbook.html">Junior CVL handbook</a></li>
+        <li><a href="SBA_Senior_Handbook_202526.pdf" target="_blank" rel="noopener">Senior handbook (PDF)</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Officiating</h5>
+      <ul>
+        <li><a href="officiate.html">Pathway</a></li>
+        <li><a href="officiate.html#pay">Match fees</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>External</h5>
+      <ul>
+        <li><a href="https://www.playhq.com/uk/basketball-england/org/surrey-basketball-association/214804d8" target="_blank" rel="noopener">PlayHQ (fixtures)</a></li>
+        <li><a href="https://www.basketballengland.co.uk" target="_blank" rel="noopener">Basketball England</a></li>
+        <li><a href="mailto:fimartin.basketball@gmail.com">Contact the CVL team</a></li>
+      </ul>
+    </div>
+
+    <div class="affiliations">
+      <span class="affiliations-label">Affiliated to</span>
+      <div class="affiliations-logos">
+        <a href="https://www.basketballengland.co.uk" target="_blank" rel="noopener" aria-label="Basketball England">
+          <img src="BE_logo.png" alt="Basketball England">
+        </a>
+        <a href="https://www.basketballengland.co.uk/play/nbl/" target="_blank" rel="noopener" aria-label="National Basketball League">
+          <img src="nbl_logo.png" alt="National Basketball League">
+        </a>
+        <a href="https://www.basketballengland.co.uk/play/junior-nbl/" target="_blank" rel="noopener" aria-label="Junior National Basketball League">
+          <img src="jnr_nbl_logo.png" alt="Junior National Basketball League">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    &copy; Surrey Basketball Association &middot; 2025&ndash;26 season
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  var tabs = document.querySelectorAll('.year-tab');
+  var rows = document.querySelectorAll('#champions-tbody tr');
+
+  function applyFilter(year) {
+    rows.forEach(function(row) {
+      var rowYear = row.dataset.year;
+      if (year === 'all' || rowYear === year) {
+        row.removeAttribute('data-hidden');
+      } else {
+        row.setAttribute('data-hidden', 'true');
+      }
+    });
+  }
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      applyFilter(tab.dataset.year);
+      if (tab.dataset.year === 'all') {
+        history.replaceState(null, '', location.pathname);
+      } else {
+        history.replaceState(null, '', '#' + tab.dataset.year);
+      }
+    });
+  });
+
+  if (location.hash) {
+    var year = location.hash.slice(1);
+    var targetTab = document.querySelector('.year-tab[data-year="' + year + '"]');
+    if (targetTab) targetTab.click();
+  }
+})();
+</script>
+
+</body>
+</html>
