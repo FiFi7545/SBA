@@ -417,6 +417,18 @@
     font-style: italic;
     font-size: 14px;
   }
+  .winner-unknown {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 13px;
+    opacity: 0.75;
+  }
+  .winner-nil {
+    color: var(--muted);
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
   .winner-live {
     display: inline-flex;
     align-items: center;
@@ -432,6 +444,23 @@
     border-radius: 50%;
     background: var(--sba-gold);
     box-shadow: 0 0 0 3px rgba(212, 169, 58, 0.25);
+  }
+  .champions-table tbody tr.senior-row td {
+    background: linear-gradient(90deg, rgba(212, 169, 58, 0.06) 0%, transparent 60%);
+  }
+  .champions-table tbody tr.senior-row:hover td {
+    background: linear-gradient(90deg, rgba(212, 169, 58, 0.14) 0%, var(--cream) 60%);
+  }
+  .champions-table tbody tr.covid-row td {
+    background: #FAF6EC;
+    color: var(--muted);
+    font-style: italic;
+    font-size: 14px;
+    padding: 18px 20px;
+  }
+  .champions-table tbody tr.covid-row:hover td { background: #FAF6EC; }
+  .champions-table tbody tr.covid-row .covid-note {
+    color: var(--ink-soft);
   }
   .current-row td.season-cell {
     background: #FFF8E6;
@@ -716,8 +745,8 @@
     <div class="placeholder-banner">
       <div class="placeholder-icon" aria-hidden="true">!</div>
       <div class="placeholder-text">
-        <h4>Historical winners need your input</h4>
-        <p>Cells marked &ldquo;to be added&rdquo; are placeholders. Seasons before 2024&ndash;25 are shown with the same division structure as 2024&ndash;25 &mdash; if any of those seasons had different competitions (or didn&rsquo;t include a particular age group), please let us know. <a href="mailto:fimartin.basketball@gmail.com?subject=Champions%20page%20%E2%80%94%20historical%20winners">Email us</a> any corrections or winners you remember.</p>
+        <h4>Historical record &mdash; with a few gaps</h4>
+        <p>Where a cell shows &ldquo;<em>Not recorded</em>&rdquo;, the winner was decided on the day but wasn&rsquo;t captured in the committee minutes, so we don&rsquo;t have an authoritative name. If you remember any of these &mdash; or spot an inaccuracy &mdash; please <a href="mailto:fimartin.basketball@gmail.com?subject=Champions%20page%20%E2%80%94%20historical%20corrections">email us</a> and we&rsquo;ll update the page. Seniors have league winners only; no playoff format has been used at senior level.</p>
       </div>
     </div>
 
@@ -728,6 +757,11 @@
       <button class="year-tab" data-year="2023-24">2023&ndash;24</button>
       <button class="year-tab" data-year="2022-23">2022&ndash;23</button>
       <button class="year-tab" data-year="2021-22">2021&ndash;22</button>
+      <button class="year-tab" data-year="2020-21">2020&ndash;21</button>
+      <button class="year-tab" data-year="2019-20">2019&ndash;20</button>
+      <button class="year-tab" data-year="2018-19">2018&ndash;19</button>
+      <button class="year-tab" data-year="2017-18">2017&ndash;18</button>
+      <button class="year-tab" data-year="2016-17">2016&ndash;17</button>
     </div>
 
     <div class="table-wrap">
@@ -742,8 +776,9 @@
         </thead>
         <tbody id="champions-tbody">
 
+          <!-- ========== 2025-26 (current) ========== -->
           <tr class="current-row" data-year="2025-26">
-            <td class="season-cell" rowspan="7">2025&ndash;26</td>
+            <td class="season-cell" rowspan="9">2025&ndash;26</td>
             <td class="division-cell">U10 Mixed</td>
             <td data-label="League winner"><span class="winner-name">Kingston Lions</span></td>
             <td data-label="Playoff champion"><span class="winner-live">Finals day 10 May</span></td>
@@ -778,113 +813,270 @@
             <td data-label="League winner"><span class="winner-name">Woking Blackhawks</span></td>
             <td data-label="Playoff champion"><span class="winner-live">Finals day 10 May</span></td>
           </tr>
-
-          <tr data-year="2024-25">
-            <td class="season-cell" rowspan="5">2024&ndash;25</td>
-            <td class="division-cell">U10 Mixed</td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          <tr class="current-row senior-row" data-year="2025-26">
+            <td class="division-cell">Senior Men</td>
+            <td data-label="League winner"><span class="winner-live">In progress</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
           </tr>
-          <tr data-year="2024-25">
-            <td class="division-cell">U12 Mixed</td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
-          </tr>
-          <tr data-year="2024-25">
-            <td class="division-cell">U14 Mixed</td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
-          </tr>
-          <tr data-year="2024-25">
-            <td class="division-cell">U16 Mixed</td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
-          </tr>
-          <tr data-year="2024-25">
-            <td class="division-cell">U18 Men <span class="div-badge">Men</span></td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          <tr class="current-row senior-row" data-year="2025-26">
+            <td class="division-cell">Senior Women</td>
+            <td data-label="League winner"><span class="winner-live">In progress</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
           </tr>
 
-          <tr data-year="2023-24">
-            <td class="season-cell" rowspan="5">2023&ndash;24</td>
-            <td class="division-cell">U10 Mixed</td>
+          <!-- ========== 2024-25 ========== -->
+          <tr data-year="2024-25">
+            <td class="season-cell" rowspan="7">2024&ndash;25</td>
+            <td class="division-cell">U10</td>
             <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
             <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
           </tr>
-          <tr data-year="2023-24">
-            <td class="division-cell">U12 Mixed</td>
+          <tr data-year="2024-25">
+            <td class="division-cell">U12</td>
             <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
             <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
           </tr>
-          <tr data-year="2023-24">
-            <td class="division-cell">U14 Mixed</td>
+          <tr data-year="2024-25">
+            <td class="division-cell">U14</td>
             <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
             <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
           </tr>
-          <tr data-year="2023-24">
-            <td class="division-cell">U16 Mixed</td>
+          <tr data-year="2024-25">
+            <td class="division-cell">U16</td>
             <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
             <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
           </tr>
-          <tr data-year="2023-24">
-            <td class="division-cell">U18 Men <span class="div-badge">Men</span></td>
+          <tr data-year="2024-25">
+            <td class="division-cell">U18</td>
             <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
             <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
           </tr>
-
-          <tr data-year="2022-23">
-            <td class="season-cell" rowspan="5">2022&ndash;23</td>
-            <td class="division-cell">U10 Mixed</td>
+          <tr class="senior-row" data-year="2024-25">
+            <td class="division-cell">Senior Men</td>
             <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
           </tr>
-          <tr data-year="2022-23">
-            <td class="division-cell">U12 Mixed</td>
+          <tr class="senior-row" data-year="2024-25">
+            <td class="division-cell">Senior Women</td>
             <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
-          </tr>
-          <tr data-year="2022-23">
-            <td class="division-cell">U14 Mixed</td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
-          </tr>
-          <tr data-year="2022-23">
-            <td class="division-cell">U16 Mixed</td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
-          </tr>
-          <tr data-year="2022-23">
-            <td class="division-cell">U18 Men <span class="div-badge">Men</span></td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
           </tr>
 
+          <!-- ========== 2023-24 ========== -->
+          <tr data-year="2023-24">
+            <td class="season-cell" rowspan="7">2023&ndash;24</td>
+            <td class="division-cell">U10</td>
+            <td data-label="League winner"><span class="winner-name">Kingston Lions</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Kingston Lions</span></td>
+          </tr>
+          <tr data-year="2023-24">
+            <td class="division-cell">U12</td>
+            <td data-label="League winner"><span class="winner-name">Richmond Knights U12 Boys West</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Richmond Knights U12 Boys West</span></td>
+          </tr>
+          <tr data-year="2023-24">
+            <td class="division-cell">U14</td>
+            <td data-label="League winner"><span class="winner-name">Richmond Knights U14 West</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Spartans U14</span></td>
+          </tr>
+          <tr data-year="2023-24">
+            <td class="division-cell">U16</td>
+            <td data-label="League winner"><span class="winner-name">Sutton Storm</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Kingston Wildcats</span></td>
+          </tr>
+          <tr data-year="2023-24">
+            <td class="division-cell">U18</td>
+            <td data-label="League winner"><span class="winner-name">KPC</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Kingston Wildcats</span></td>
+          </tr>
+          <tr class="senior-row" data-year="2023-24">
+            <td class="division-cell">Senior Men</td>
+            <td data-label="League winner"><span class="winner-name">Twickenham Tigers</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
+          </tr>
+          <tr class="senior-row" data-year="2023-24">
+            <td class="division-cell">Senior Women</td>
+            <td data-label="League winner"><span class="winner-name">Sutton Storm</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
+          </tr>
+
+          <!-- ========== 2022-23 ========== -->
+          <tr data-year="2022-23">
+            <td class="season-cell" rowspan="6">2022&ndash;23</td>
+            <td class="division-cell">U10</td>
+            <td data-label="League winner"><span class="winner-name">Kingston Lions</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Kingston Lions</span></td>
+          </tr>
+          <tr data-year="2022-23">
+            <td class="division-cell">U12</td>
+            <td data-label="League winner"><span class="winner-name">Richmond Knights East</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Richmond Knights East</span></td>
+          </tr>
+          <tr data-year="2022-23">
+            <td class="division-cell">U14</td>
+            <td data-label="League winner"><span class="winner-name">Richmond Knights West</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Richmond Knights West</span></td>
+          </tr>
+          <tr data-year="2022-23">
+            <td class="division-cell">U16</td>
+            <td data-label="League winner"><span class="winner-name">Spartans</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Kingston Wildcats</span></td>
+          </tr>
+          <tr class="senior-row" data-year="2022-23">
+            <td class="division-cell">Senior Men</td>
+            <td data-label="League winner"><span class="winner-name">Twickenham Tigers</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
+          </tr>
+          <tr class="senior-row" data-year="2022-23">
+            <td class="division-cell">Senior Women</td>
+            <td data-label="League winner"><span class="winner-name">Tandridge Stealers</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
+          </tr>
+
+          <!-- ========== 2021-22 ========== -->
           <tr data-year="2021-22">
-            <td class="season-cell" rowspan="5">2021&ndash;22</td>
-            <td class="division-cell">U10 Mixed</td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+            <td class="season-cell" rowspan="6">2021&ndash;22</td>
+            <td class="division-cell">U10</td>
+            <td data-label="League winner"><span class="winner-name">Baltic Stars</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Baltic Stars</span></td>
           </tr>
           <tr data-year="2021-22">
-            <td class="division-cell">U12 Mixed</td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+            <td class="division-cell">U12</td>
+            <td data-label="League winner"><span class="winner-name">Sevenoaks Suns</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Kingston Lions</span></td>
           </tr>
           <tr data-year="2021-22">
-            <td class="division-cell">U14 Mixed</td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+            <td class="division-cell">U14</td>
+            <td data-label="League winner"><span class="winner-name">Croydon Elite</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Kingston Lions</span></td>
           </tr>
           <tr data-year="2021-22">
-            <td class="division-cell">U16 Mixed</td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+            <td class="division-cell">U16</td>
+            <td data-label="League winner"><span class="winner-name">Sutton Storm</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Surrey Rams</span></td>
           </tr>
-          <tr data-year="2021-22">
-            <td class="division-cell">U18 Men <span class="div-badge">Men</span></td>
-            <td data-label="League winner"><span class="winner-placeholder">To be added</span></td>
-            <td data-label="Playoff champion"><span class="winner-placeholder">To be added</span></td>
+          <tr class="senior-row" data-year="2021-22">
+            <td class="division-cell">Senior Men</td>
+            <td data-label="League winner"><span class="winner-name">Cobham King Cobras</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
+          </tr>
+          <tr class="senior-row" data-year="2021-22">
+            <td class="division-cell">Senior Women</td>
+            <td data-label="League winner"><span class="winner-name">Tandridge Stealers</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
+          </tr>
+
+          <!-- ========== 2020-21 (COVID) ========== -->
+          <tr class="covid-row" data-year="2020-21">
+            <td class="season-cell">2020&ndash;21</td>
+            <td class="division-cell"><span class="covid-note"><strong>Season disrupted by COVID-19</strong></span></td>
+            <td colspan="2" data-label="Record"><span>No competitive season completed &mdash; no league winners or playoff champions crowned.</span></td>
+          </tr>
+
+          <!-- ========== 2019-20 (COVID) ========== -->
+          <tr class="covid-row" data-year="2019-20">
+            <td class="season-cell">2019&ndash;20</td>
+            <td class="division-cell"><span class="covid-note"><strong>Season disrupted by COVID-19</strong></span></td>
+            <td colspan="2" data-label="Record"><span>Season cut short in March 2020 &mdash; no finals day held.</span></td>
+          </tr>
+
+          <!-- ========== 2018-19 ========== -->
+          <tr data-year="2018-19">
+            <td class="season-cell" rowspan="6">2018&ndash;19</td>
+            <td class="division-cell">U10 Div 1</td>
+            <td data-label="League winner"><span class="winner-name">Baltic Stars</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Baltic Stars</span></td>
+          </tr>
+          <tr data-year="2018-19">
+            <td class="division-cell">U12 Div 1</td>
+            <td data-label="League winner"><span class="winner-name">Richmond Knights East U11</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Richmond Knights East U11</span></td>
+          </tr>
+          <tr data-year="2018-19">
+            <td class="division-cell">U14 Div 1</td>
+            <td data-label="League winner"><span class="winner-name">Spartans Heat</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Sutton Storm</span></td>
+          </tr>
+          <tr data-year="2018-19">
+            <td class="division-cell">U16 Div 1</td>
+            <td data-label="League winner"><span class="winner-name">Sutton Storm</span></td>
+            <td data-label="Playoff champion"><span class="winner-name">Sutton Storm</span></td>
+          </tr>
+          <tr class="senior-row" data-year="2018-19">
+            <td class="division-cell">Senior Men</td>
+            <td data-label="League winner"><span class="winner-name">Kingston Wildcats SOB</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
+          </tr>
+          <tr class="senior-row" data-year="2018-19">
+            <td class="division-cell">Senior Women</td>
+            <td data-label="League winner"><span class="winner-name">Tandridge Stealers</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
+          </tr>
+
+          <!-- ========== 2017-18 ========== -->
+          <tr data-year="2017-18">
+            <td class="season-cell" rowspan="6">2017&ndash;18</td>
+            <td class="division-cell">U10 Div 1</td>
+            <td data-label="League winner"><span class="winner-name">Baltic Stars 1</span></td>
+            <td data-label="Playoff champion"><span class="winner-unknown">Not recorded</span></td>
+          </tr>
+          <tr data-year="2017-18">
+            <td class="division-cell">U12 Div 1</td>
+            <td data-label="League winner"><span class="winner-name">Richmond Knights U12 East Boys</span></td>
+            <td data-label="Playoff champion"><span class="winner-unknown">Not recorded</span></td>
+          </tr>
+          <tr data-year="2017-18">
+            <td class="division-cell">U14 Div 1</td>
+            <td data-label="League winner"><span class="winner-name">Richmond Knights</span></td>
+            <td data-label="Playoff champion"><span class="winner-unknown">Not recorded</span></td>
+          </tr>
+          <tr data-year="2017-18">
+            <td class="division-cell">U16 Div 1</td>
+            <td data-label="League winner"><span class="winner-name">Kingston Royals</span></td>
+            <td data-label="Playoff champion"><span class="winner-unknown">Not recorded</span></td>
+          </tr>
+          <tr class="senior-row" data-year="2017-18">
+            <td class="division-cell">Senior Men</td>
+            <td data-label="League winner"><span class="winner-name">Kingston Wildcats SOB</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
+          </tr>
+          <tr class="senior-row" data-year="2017-18">
+            <td class="division-cell">Senior Women</td>
+            <td data-label="League winner"><span class="winner-name">Tandridge Stealers</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
+          </tr>
+
+          <!-- ========== 2016-17 ========== -->
+          <tr data-year="2016-17">
+            <td class="season-cell" rowspan="6">2016&ndash;17</td>
+            <td class="division-cell">U10 (A)</td>
+            <td data-label="League winner"><span class="winner-name">Baltic Stars U10</span></td>
+            <td data-label="Playoff champion"><span class="winner-unknown">Not recorded</span></td>
+          </tr>
+          <tr data-year="2016-17">
+            <td class="division-cell">U12 (A)</td>
+            <td data-label="League winner"><span class="winner-name">RKWB U12</span></td>
+            <td data-label="Playoff champion"><span class="winner-unknown">Not recorded</span></td>
+          </tr>
+          <tr data-year="2016-17">
+            <td class="division-cell">U14</td>
+            <td data-label="League winner"><span class="winner-name">Woking Blackhawks</span></td>
+            <td data-label="Playoff champion"><span class="winner-unknown">Not recorded</span></td>
+          </tr>
+          <tr data-year="2016-17">
+            <td class="division-cell">U16</td>
+            <td data-label="League winner"><span class="winner-name">Kingston Wildcats SOB</span></td>
+            <td data-label="Playoff champion"><span class="winner-unknown">Not recorded</span></td>
+          </tr>
+          <tr class="senior-row" data-year="2016-17">
+            <td class="division-cell">Senior Men</td>
+            <td data-label="League winner"><span class="winner-name">Kingston Wildcats</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
+          </tr>
+          <tr class="senior-row" data-year="2016-17">
+            <td class="division-cell">Senior Women</td>
+            <td data-label="League winner"><span class="winner-name">Tandridge Stealers</span></td>
+            <td data-label="Playoff champion"><span class="winner-nil">&mdash;</span></td>
           </tr>
 
         </tbody>
