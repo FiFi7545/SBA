@@ -256,11 +256,11 @@
   }
   .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
 
-  /* Hero visual: basketball + floating badge */
+  /* Hero visual: basketball */
   .hero-viz {
     position: relative;
     aspect-ratio: 1;
-    max-width: 420px;
+    max-width: 380px;
     margin: 0 auto;
   }
   .hero-ball {
@@ -287,34 +287,8 @@
       radial-gradient(circle at 50% 100%, transparent 58%, rgba(0,0,0,0.45) 58.5%, rgba(0,0,0,0.45) 61%, transparent 61.5%);
   }
   .hero-badge {
-    position: absolute;
-    bottom: 30px;
-    right: -20px;
-    background: #fff;
-    border: 2px solid var(--ink);
-    border-radius: 14px;
-    padding: 16px 20px;
-    box-shadow: 8px 8px 0 var(--sba-gold);
-    z-index: 2;
-    transform: rotate(-4deg);
-    max-width: 230px;
+    display: none;
   }
-  .hero-badge-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 4px;
-  }
-  .hero-badge-text {
-    font-family: var(--serif);
-    font-weight: 700;
-    font-size: 16px;
-    color: var(--ink);
-    line-height: 1.2;
-  }
-  .hero-badge-text em { color: var(--sba-red); font-style: italic; }
 
   /* ================= STATS STRIP ================= */
   .stats-strip {
@@ -472,6 +446,97 @@
   .age-chip.adult .age-chip-sub {
     color: rgba(255,255,255,0.7);
     margin-top: 2px;
+  }
+
+  /* Girls' basketball band */
+  .girls-band {
+    background:
+      radial-gradient(ellipse at top right, rgba(212, 169, 58, 0.12), transparent 50%),
+      radial-gradient(ellipse at bottom left, rgba(184, 36, 28, 0.06), transparent 50%),
+      #FFFBF2;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .girls-kicker {
+    color: var(--sba-gold-dark);
+  }
+  .girls-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 4px 0 24px;
+  }
+  .girls-stat {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--sba-gold);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .girls-stat-num {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--sba-red);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .girls-stat-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.35;
+  }
+  .girls-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .girls-card {
+    display: block;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 22px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+    position: relative;
+  }
+  .girls-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--sba-gold);
+    box-shadow: 0 6px 16px rgba(212, 169, 58, 0.12);
+  }
+  .girls-card-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sba-gold-dark);
+    margin-bottom: 8px;
+  }
+  .girls-card h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .girls-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .girls-card-cta {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--sba-red);
+    letter-spacing: 0.02em;
+  }
+  .girls-card:hover .girls-card-cta {
+    color: var(--sba-red-dark);
   }
 
   /* Officiate promo block */
@@ -808,9 +873,8 @@
     section.band { padding: 56px 0; }
     .venues-grid { grid-template-columns: 1fr; }
     footer .container { grid-template-columns: 1fr; gap: 28px; }
-    .hero-badge { right: -4px; bottom: 16px; max-width: 190px; padding: 12px 16px; box-shadow: 4px 4px 0 var(--sba-gold); }
-    .hero-badge-text { font-size: 14px; }
     .officiate-promo { padding: 32px 24px; }
+    .girls-stats { grid-template-columns: 1fr; }
     .announce-bar { padding: 10px 14px; gap: 10px; font-size: 13px; flex-wrap: nowrap; }
     .announce-tag { font-size: 9px; padding: 2px 8px; }
     .announce-text { font-size: 13px; line-height: 1.35; }
@@ -854,7 +918,7 @@
     <div>
       <span class="kicker">Governing basketball in Surrey</span>
       <h1>Where Surrey's next generation <em>learns the game</em>.</h1>
-      <p class="hero-lead">Surrey Basketball Association runs competitive leagues for players aged nine to adult &mdash; from our U10 Central Venue Leagues right through to senior men&rsquo;s and women&rsquo;s basketball. We&rsquo;re the county&rsquo;s affiliated body under Basketball England.</p>
+      <p class="hero-lead">Surrey Basketball Association runs competitive leagues for players aged 7 to adult &mdash; from our U10 Central Venue Leagues right through to senior men&rsquo;s and women&rsquo;s basketball. We&rsquo;re the county&rsquo;s affiliated body under Basketball England.</p>
       <div class="hero-ctas">
         <a href="handbook.html" class="btn btn-primary">Read the handbook &rarr;</a>
         <a href="officiate.html" class="btn btn-secondary">Become an official</a>
@@ -862,10 +926,6 @@
     </div>
     <div class="hero-viz">
       <div class="hero-ball" aria-hidden="true"></div>
-      <div class="hero-badge">
-        <div class="hero-badge-label">2025&ndash;26 season</div>
-        <div class="hero-badge-text">Games every Sunday, <em>September to May</em></div>
-      </div>
     </div>
   </div>
 </section>
@@ -953,7 +1013,7 @@
         <div class="age-stack">
           <div class="age-chip">
             <div class="age-chip-num">U10</div>
-            <div class="age-chip-sub">Mixed</div>
+            <div class="age-chip-sub">Mixed + Girls</div>
           </div>
           <div class="age-chip">
             <div class="age-chip-num">U12</div>
@@ -979,6 +1039,56 @@
             <div class="age-chip-num">Senior</div>
             <div class="age-chip-sub">Men&rsquo;s &amp; women&rsquo;s leagues</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GIRLS' BASKETBALL ============ -->
+<section class="band girls-band">
+  <div class="container">
+    <div class="feature-band reverse">
+      <div class="feature-text">
+        <span class="kicker girls-kicker">New this season</span>
+        <h2>Girls&rsquo; basketball in Surrey &mdash; <em>her game, on her court</em>.</h2>
+        <p>2025&ndash;26 was the first season we ran <strong>standalone U10 and U12 Girls&rsquo; divisions</strong> in the Surrey CVL. It&rsquo;s a small start, but a meaningful one: female-only playing spaces where girls set the pace, develop with their peers, and see other girls taking part alongside them.</p>
+        <p>Our work sits alongside Basketball England&rsquo;s national programmes to grow the women&rsquo;s and girls&rsquo; game &mdash; and we&rsquo;re proud that one of our clubs, Reading Rockets, is a Her World, Her Rules delivery partner.</p>
+        <div class="girls-stats">
+          <div class="girls-stat">
+            <div class="girls-stat-num">2</div>
+            <div class="girls-stat-label">girls-only CVL divisions this season &mdash; U10 and U12</div>
+          </div>
+          <div class="girls-stat">
+            <div class="girls-stat-num">Both</div>
+            <div class="girls-stat-label">league titles lifted by Kingston Lions</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="girls.html" class="btn btn-primary">Explore girls&rsquo; basketball &rarr;</a>
+          <a href="clubs.html#girls" class="btn btn-secondary">Find a club</a>
+        </div>
+      </div>
+      <div class="feature-visual">
+        <div class="girls-cards">
+          <a class="girls-card" href="https://basketballengland.co.uk/get-involved/her-world-her-rules" target="_blank" rel="noopener">
+            <div class="girls-card-tag">FIBA &amp; Basketball England</div>
+            <h3>Her World, Her Rules</h3>
+            <p>FIBA&rsquo;s flagship girls&rsquo; basketball campaign, now in its fourth year in the UK. Female-only sessions for girls aged 6&ndash;15, building confidence on and off the court.</p>
+            <span class="girls-card-cta">Learn more &rarr;</span>
+          </a>
+          <a class="girls-card" href="https://basketballengland.co.uk/all-girls-ambassadors/" target="_blank" rel="noopener">
+            <div class="girls-card-tag">Basketball England</div>
+            <h3>All Girls Ambassadors</h3>
+            <p>A national network of ambassadors breaking down barriers for women and girls in the game &mdash; as players, coaches, officials and volunteers.</p>
+            <span class="girls-card-cta">Become an ambassador &rarr;</span>
+          </a>
+          <a class="girls-card" href="https://basketballengland.co.uk/news/her-world-her-rules-clubs-ready-to-inspire-more-girls-into-basketball" target="_blank" rel="noopener">
+            <div class="girls-card-tag">What&rsquo;s happening</div>
+            <h3>Clubs inspiring the next generation</h3>
+            <p>Over 40 clubs across England are running Her World, Her Rules sessions in 2025&ndash;26 &mdash; including Surrey&rsquo;s own Reading Rockets with weekly girls-only sessions for ages 8&ndash;16.</p>
+            <span class="girls-card-cta">Read the story &rarr;</span>
+          </a>
         </div>
       </div>
     </div>
@@ -1111,6 +1221,7 @@
       <ul>
         <li><a href="clubs.html">Clubs in the league</a></li>
         <li><a href="champions.html">Champions</a></li>
+        <li><a href="girls.html">Girls&rsquo; basketball</a></li>
         <li><a href="handbook.html">Junior CVL handbook</a></li>
         <li><a href="SBA_Senior_Handbook_202526.pdf" target="_blank" rel="noopener">Senior handbook (PDF)</a></li>
         <li><a href="handbook.html#playing">Age-group rules</a></li>

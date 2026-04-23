@@ -482,6 +482,7 @@
     <nav class="header-links">
       <a href="index.html">Home</a>
       <a href="clubs.html" class="current">Clubs</a>
+      <a href="champions.html">Champions</a>
       <a href="https://fimartin.my.canva.site/surreycvlplayoffs2025-26/" target="_blank" rel="noopener">Playoffs</a>
       <a href="handbook.html">Handbook</a>
       <a href="officiate.html">Officiate</a>
@@ -967,6 +968,8 @@
       <h5>The league</h5>
       <ul>
         <li><a href="clubs.html">Clubs</a></li>
+        <li><a href="champions.html">Champions</a></li>
+        <li><a href="girls.html">Girls&rsquo; basketball</a></li>
         <li><a href="handbook.html">Junior CVL handbook</a></li>
         <li><a href="SBA_Senior_Handbook_202526.pdf" target="_blank" rel="noopener">Senior handbook (PDF)</a></li>
         <li><a href="handbook.html#playing">Age-group rules</a></li>
@@ -1112,6 +1115,18 @@
 
   // Initial status
   applyFilter();
+
+  // Hash deep-linking: clubs.html#girls applies the girls filter on page load
+  if (location.hash) {
+    var hashFilter = location.hash.slice(1);
+    var targetChip = chipsContainer.querySelector('[data-filter="' + hashFilter + '"]');
+    if (targetChip) {
+      chipsContainer.querySelectorAll('.chip').forEach(function(c) { c.classList.remove('active'); });
+      targetChip.classList.add('active');
+      activeFilter = hashFilter;
+      applyFilter();
+    }
+  }
 })();
 </script>
 
